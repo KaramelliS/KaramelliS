@@ -167,9 +167,10 @@ every time I set up a new box.
 <p align="center">
   <sub>
     Every number above — and every project card — is read from the GitHub API and
-    rebuilt by <a href="scripts/build.py"><code>scripts/build.py</code></a>
-    <a href=".github/workflows/refresh.yml">every ten minutes</a>. No third-party badge
-    service, nothing hand-typed. Ship a new repository and it appears here on its own.
+    rebuilt by <a href="scripts/build.py"><code>scripts/build.py</code></a>, running
+    <a href=".github/workflows/refresh.yml">in GitHub Actions</a> on a schedule and on
+    every push. No third-party badge service, nothing hand-typed. Ship a new repository
+    and it appears here on its own.
   </sub>
 </p>
 

@@ -2,11 +2,19 @@ name: refresh profile
 
 on:
   schedule:
-    # Every 10 minutes. There is no point going faster: raw.githubusercontent
+    # Asks for every 10 minutes; GitHub does not honour that. Measured on
+    # 2026-08-10: 1 scheduled run actually fired in 76 minutes, not 7. The
+    # schedule event is best-effort and gets dropped under load, so treat this
+    # as "eventually" rather than a cadence you can quote to anyone.
+    #
+    # Going faster would not help even if it were honoured: raw.githubusercontent
     # serves the committed SVGs with Cache-Control: max-age=300, so a viewer
-    # cannot see a change sooner than five minutes after it lands anyway.
-    # (Serving them live from a Worker would be worse, not better — external
-    # images go through camo, which caches for 86400s.)
+    # cannot see a change sooner than five minutes after it lands. (Serving them
+    # live from a Worker would be worse — external images go through camo, which
+    # caches for 86400s.)
+    #
+    # For a tighter guarantee, the fix is an external ping to workflow_dispatch,
+    # not a smaller cron number.
     - cron: '*/10 * * * *'
   workflow_dispatch:
   push:
