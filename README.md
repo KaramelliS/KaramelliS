@@ -8,6 +8,8 @@
   <img src="https://img.shields.io/badge/Rust-dea584?style=flat-square&logo=rust&logoColor=0b0d10&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logo=python&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/JavaScript-f1e05a?style=flat-square&logo=javascript&logoColor=0b0d10&labelColor=171b21"/>
+  <img src="https://img.shields.io/badge/Fastify-000000?style=flat-square&logo=fastify&logoColor=white&labelColor=171b21"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white&labelColor=171b21"/>
 </p>
@@ -45,11 +47,9 @@ embedded web panel in **14 languages**, live console,
 anti-idle Minecraft bot, AES-256-GCM encrypted session.
 
 **Hardest part:** the queue. Aternos opens a ~30 second
-confirmation window when your turn comes and sends you to
-the back if nobody answers — which is why plain keep-alive
-scripts wait forever. This one answers it. Also a
-hand-written WebSocket handshake, because Cloudflare
-rejects the standard library's header casing.
+window when your turn comes and sends you to the back if
+nobody answers — which is why plain keep-alive scripts wait
+forever. This one answers it.
 
 *Pure HTTP. No Selenium, no Puppeteer, no browser.*
 
@@ -67,29 +67,35 @@ No browser and no ad rendering: each gateway is a
 reverse-engineered redirect chain, so it runs in
 milliseconds where a headless browser needs seconds.
 
+Packaged with `pyproject.toml`, a one-line `install.sh`
+and GitHub Actions CI. Dead services get retired to
+`shorteners_inactive.txt` rather than silently failing.
+
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
 ### 📬 [cloudflare-temp-sms](https://github.com/KaramelliS/cloudflare-temp-sms)
-`JavaScript` · `Cloudflare Workers` — MIT
+`Node.js` · `Fastify` · `Redis` — MIT
 
-Zero-config disposable **temp-mail API** built on Cloudflare
-Email Routing. Create an inbox, receive mail by webhook,
-everything auto-expires.
+Turns **Cloudflare Email Routing** into a zero-config
+disposable **temp-mail API**. Create an inbox, receive mail
+by webhook, everything expires on a Redis TTL.
 
-Serverless by design — no host to pay for, no host to patch.
+Rate limiting and CORS are built in rather than bolted on,
+and it ships with Docker, Railway and Render configs — so
+deploying it is one command wherever you like.
 
 </td>
 <td width="50%" valign="top">
 
 ### 🗯️ [comic-translator](https://github.com/KaramelliS/comic-translator)
-`Python` · `OpenCV` · `OCR`
+`Python` · `OpenCV` · `EasyOCR` · `Streamlit`
 
 A full comic/manga translation pipeline: **speech-bubble
 detection → OCR → translation → text re-rendering** back
-into the original bubble.
+into the original bubble, with a Streamlit UI on top.
 
 The interesting problem isn't the translating, it's putting
 the new text back so the page still looks drawn, not pasted.
