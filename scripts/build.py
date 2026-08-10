@@ -48,6 +48,7 @@ query($login: String!) {
       totalCommitContributions
       totalPullRequestContributions
       totalIssueContributions
+      restrictedContributionsCount
       contributionCalendar {
         totalContributions
         weeks { contributionDays { date contributionCount weekday } }
@@ -216,8 +217,14 @@ def build_header(u, repos, stars):
 
 def build_stats(cc, repo_count, stars, busiest):
     cal = cc["contributionCalendar"]
+    # A token that is not Berkay's own can only count public contributions.
+    # In CI that is the case, so say "public" rather than quietly showing a
+    # smaller number under a label that claims to be the total.
+    hidden = cc.get("restrictedContributionsCount") or 0
+    pub = " public" if hidden else ""
+    note = "%d private not shown" % hidden if hidden else "last 12 months"
     items = [
-        (cal["totalContributions"], "contributions", "last 12 months"),
+        (cal["totalContributions"], "%scontributions" % (pub.strip() + " " if pub else ""), note),
         (cc["totalCommitContributions"], "commits", "authored"),
         (repo_count, "public repos", "all mine, no forks"),
         (stars, "stars earned", "across every repo"),
@@ -227,7 +234,7 @@ def build_stats(cc, repo_count, stars, busiest):
     p = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
          'role="img" aria-label="GitHub activity: %d contributions, %d commits, %d repositories, %d stars">'
          % (W, H, W, H, cal["totalContributions"], cc["totalCommitContributions"], repo_count, stars)]
-    p += card(W, H, "ACTIVITY · REFRESHED AUTOMATICALLY BY GITHUB ACTIONS")
+    p += card(W, H, "ACTIVITY · REFRESHED AUTOMATICALLY BY GITHUB ACTIONS" + (" · PUBLIC ONLY" if hidden else ""))
 
     n = len(items)
     gap, x0 = 14, 40
@@ -264,7 +271,9 @@ def build_contributions(u):
     p = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
          'role="img" aria-label="Contribution calendar: %d contributions in the last year">'
          % (W, H, W, H, cal["totalContributions"])]
-    p += card(W, H, "CONTRIBUTIONS · %d IN THE LAST YEAR" % cal["totalContributions"])
+    hidden = u["contributionsCollection"].get("restrictedContributionsCount") or 0
+    p += card(W, H, "CONTRIBUTIONS · %d%s IN THE LAST YEAR"
+              % (cal["totalContributions"], " PUBLIC" if hidden else ""))
 
     # month labels
     seen = set()
@@ -461,9 +470,10 @@ def main():
             print("updated %s" % name)
         else:
             print("unchanged %s" % name)
-    print("contributions=%d commits=%d repos=%d stars=%d peak=%d"
+    print("contributions=%d commits=%d repos=%d stars=%d peak=%d hidden=%d"
           % (cc["contributionCalendar"]["totalContributions"],
-             cc["totalCommitContributions"], len(repos), stars, peak))
+             cc["totalCommitContributions"], len(repos), stars, peak,
+             cc.get("restrictedContributionsCount") or 0))
 
 
 if __name__ == "__main__":
