@@ -185,3 +185,5 @@ sebebi bu.
 <p align="center">
   <sub>Built in the open · <a href="https://github.com/KaramelliS?tab=repositories">all repositories →</a></sub>
 </p>
+
+<!-- profile -->
