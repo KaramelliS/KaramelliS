@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Rust-dea584?style=flat-square&logo=rust&logoColor=0b0d10&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logo=python&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/JavaScript-f1e05a?style=flat-square&logo=javascript&logoColor=0b0d10&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Fastify-000000?style=flat-square&logo=fastify&logoColor=white&labelColor=171b21"/>
+  <img src="https://img.shields.io/badge/Fastify-3a434f?style=flat-square&logo=fastify&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white&labelColor=171b21"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white&labelColor=171b21"/>
