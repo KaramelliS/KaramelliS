@@ -39,7 +39,7 @@ That approach is the reason `aterkeep` fits in a 2.3 MB binary with no runtime a
 <td width="50%" valign="top">
 
 ### 🦀 [aterkeep](https://github.com/KaramelliS/aterkeep)
-`Rust` · `axum` · `tokio` — ⭐ 3
+`Rust` · `axum` · `tokio`<!--stars:aterkeep--> — ⭐ 4<!--/stars-->
 
 A self-hosted manager that keeps a free Aternos Minecraft
 server online 24/7. One ~2.3 MB binary: keep-alive loop,
@@ -57,7 +57,7 @@ forever. This one answers it.
 <td width="50%" valign="top">
 
 ### 🔗 [shortlink-bypass](https://github.com/KaramelliS/shortlink-bypass)
-`Python` · `curl` — ⭐ 1 · MIT
+`Python` · `curl`<!--stars:shortlink-bypass--> — ⭐ 1<!--/stars--> · MIT
 
 Resolves link-gateway services — linkvertise, adf.ly,
 cpmlink, boost.ink, aylink — straight to the destination.
@@ -77,7 +77,7 @@ and GitHub Actions CI. Dead services get retired to
 <td width="50%" valign="top">
 
 ### 📬 [cloudflare-temp-sms](https://github.com/KaramelliS/cloudflare-temp-sms)
-`Node.js` · `Fastify` · `Redis` — MIT
+`Node.js` · `Fastify` · `Redis`<!--stars:cloudflare-temp-sms--><!--/stars--> — MIT
 
 Turns **Cloudflare Email Routing** into a zero-config
 disposable **temp-mail API**. Create an inbox, receive mail
@@ -91,7 +91,7 @@ deploying it is one command wherever you like.
 <td width="50%" valign="top">
 
 ### 🗯️ [comic-translator](https://github.com/KaramelliS/comic-translator)
-`Python` · `OpenCV` · `EasyOCR` · `Streamlit`
+`Python` · `OpenCV` · `EasyOCR` · `Streamlit`<!--stars:comic-translator--><!--/stars-->
 
 A full comic/manga translation pipeline: **speech-bubble
 detection → OCR → translation → text re-rendering** back
@@ -106,7 +106,7 @@ the new text back so the page still looks drawn, not pasted.
 <td width="50%" valign="top">
 
 ### 🎯 [valorant-fandom](https://github.com/KaramelliS/valorant-fandom)
-`HTML` · `Python` · `JavaScript`
+`HTML` · `Python` · `JavaScript`<!--stars:valorant-fandom--><!--/stars-->
 
 Valorant wiki data as a **serverless JS library** — agents,
 weapons, maps, ranks and skins across 5 modules, served
@@ -119,7 +119,7 @@ key, no backend, no rate limit.
 <td width="50%" valign="top">
 
 ### 🤖 [agent-setup](https://github.com/KaramelliS/agent-setup)
-`docs`
+`docs`<!--stars:agent-setup--><!--/stars-->
 
 Cross-OS setup memory for coding agents — OpenCode, Claude
 Code and Codex — so a Windows, Linux and macOS machine can

@@ -15,12 +15,15 @@ empty bar wherever animation does not run, which is worse than no animation.
 
 import json
 import os
+import re
 import sys
 import urllib.request
 from datetime import date, datetime
 
 USER = "KaramelliS"
-OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, "assets")
+README = os.path.join(ROOT, "README.md")
 
 BG, PANEL, PANEL2 = "#0f1216", "#171b21", "#121519"
 LINE, LINE2 = "#2b323d", "#242a33"
@@ -446,6 +449,33 @@ def build_langs(repos):
     return "\n".join(p) + "\n"
 
 
+def update_readme(repos):
+    """Refresh the star counts written into the project cards.
+
+    The cards are hand-written prose worth keeping, so only the bit between
+    <!--stars:name--> and <!--/stars--> is rewritten. A repo with no stars
+    yet collapses to nothing rather than advertising a zero.
+    """
+    if not os.path.exists(README):
+        return False
+    with open(README, encoding="utf-8") as f:
+        before = f.read()
+    counts = {r["name"]: r["stargazerCount"] for r in repos}
+
+    def sub(m):
+        n = counts.get(m.group(1), 0)
+        return "<!--stars:%s-->%s<!--/stars-->" % (m.group(1), (" — ⭐ %d" % n) if n else "")
+
+    after = re.sub(r"<!--stars:([\w.-]+)-->.*?<!--/stars-->", sub, before, flags=re.S)
+    if after == before:
+        print("unchanged README.md")
+        return False
+    with open(README, "w", encoding="utf-8", newline="\n") as f:
+        f.write(after)
+    print("updated README.md")
+    return True
+
+
 def main():
     u = fetch()
     repos = [r for r in u["repositories"]["nodes"] if not r["isFork"]]
@@ -475,6 +505,7 @@ def main():
             print("updated %s" % name)
         else:
             print("unchanged %s" % name)
+    update_readme(repos)
     print("contributions=%d commits=%d repos=%d stars=%d peak=%d hidden=%d"
           % (cc["contributionCalendar"]["totalContributions"],
              cc["totalCommitContributions"], len(repos), stars, peak,
