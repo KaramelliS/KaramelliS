@@ -171,6 +171,17 @@ sebebi bu.
 
 </details>
 
+## Reach me
+
+<p align="center">
+  <a href="mailto:berlaylc2138@gmail.com"><img src="https://img.shields.io/badge/berlaylc2138@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=171b21"/></a>
+  <a href="https://github.com/KaramelliS"><img src="https://img.shields.io/badge/@KaramelliS-181717?style=flat-square&logo=github&logoColor=white&labelColor=171b21"/></a>
+</p>
+
+<p align="center">
+  <sub>Open to interesting problems — especially anything involving a protocol nobody documented.</sub>
+</p>
+
 <p align="center">
   <sub>Built in the open · <a href="https://github.com/KaramelliS?tab=repositories">all repositories →</a></sub>
 </p>
