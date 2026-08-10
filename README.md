@@ -34,12 +34,13 @@ That approach is the reason `aterkeep` fits in a 2.3 MB binary with no runtime a
 
 ## Things I've built
 
+<!--projects-->
 <table>
 <tr>
 <td width="50%" valign="top">
 
 ### 🦀 [aterkeep](https://github.com/KaramelliS/aterkeep)
-`Rust` · `axum` · `tokio`<!--stars:aterkeep--> — ⭐ 4<!--/stars-->
+`Rust` · `axum` · `tokio` — ⭐ 4
 
 A self-hosted manager that keeps a free Aternos Minecraft
 server online 24/7. One ~2.3 MB binary: keep-alive loop,
@@ -53,11 +54,13 @@ forever. This one answers it.
 
 *Pure HTTP. No Selenium, no Puppeteer, no browser.*
 
+<sub>started 09 Aug 2026 · last push 10 Aug 2026</sub>
+
 </td>
 <td width="50%" valign="top">
 
 ### 🔗 [shortlink-bypass](https://github.com/KaramelliS/shortlink-bypass)
-`Python` · `curl`<!--stars:shortlink-bypass--> — ⭐ 1<!--/stars--> · MIT
+`Python` · `curl` — ⭐ 1 · MIT
 
 Resolves link-gateway services — linkvertise, adf.ly,
 cpmlink, boost.ink, aylink — straight to the destination.
@@ -71,13 +74,15 @@ Packaged with `pyproject.toml`, a one-line `install.sh`
 and GitHub Actions CI. Dead services get retired to
 `shorteners_inactive.txt` rather than silently failing.
 
+<sub>started 30 Jun 2026 · last push 03 Jul 2026</sub>
+
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
 ### 📬 [cloudflare-temp-sms](https://github.com/KaramelliS/cloudflare-temp-sms)
-`Node.js` · `Fastify` · `Redis`<!--stars:cloudflare-temp-sms--><!--/stars--> — MIT
+`Node.js` · `Fastify` · `Redis` — MIT
 
 Turns **Cloudflare Email Routing** into a zero-config
 disposable **temp-mail API**. Create an inbox, receive mail
@@ -87,11 +92,13 @@ Rate limiting and CORS are built in rather than bolted on,
 and it ships with Docker, Railway and Render configs — so
 deploying it is one command wherever you like.
 
+<sub>started 20 Jul 2026 · last push 20 Jul 2026</sub>
+
 </td>
 <td width="50%" valign="top">
 
 ### 🗯️ [comic-translator](https://github.com/KaramelliS/comic-translator)
-`Python` · `OpenCV` · `EasyOCR` · `Streamlit`<!--stars:comic-translator--><!--/stars-->
+`Python` · `OpenCV` · `EasyOCR` · `Streamlit`
 
 A full comic/manga translation pipeline: **speech-bubble
 detection → OCR → translation → text re-rendering** back
@@ -100,13 +107,15 @@ into the original bubble, with a Streamlit UI on top.
 The interesting problem isn't the translating, it's putting
 the new text back so the page still looks drawn, not pasted.
 
+<sub>started 30 Jun 2026 · last push 30 Jun 2026</sub>
+
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
 ### 🎯 [valorant-fandom](https://github.com/KaramelliS/valorant-fandom)
-`HTML` · `Python` · `JavaScript`<!--stars:valorant-fandom--><!--/stars-->
+`HTML` · `Python` · `JavaScript`
 
 Valorant wiki data as a **serverless JS library** — agents,
 weapons, maps, ranks and skins across 5 modules, served
@@ -115,11 +124,13 @@ directly from GitHub raw URLs.
 Scraped once with Python, shipped as static JSON. No API
 key, no backend, no rate limit.
 
+<sub>started 10 Jul 2026 · last push 11 Jul 2026</sub>
+
 </td>
 <td width="50%" valign="top">
 
 ### 🤖 [agent-setup](https://github.com/KaramelliS/agent-setup)
-`docs`<!--stars:agent-setup--><!--/stars-->
+`docs`
 
 Cross-OS setup memory for coding agents — OpenCode, Claude
 Code and Codex — so a Windows, Linux and macOS machine can
@@ -128,9 +139,12 @@ each log what they configured and stay in sync.
 Notes rather than a program, but it saves me an afternoon
 every time I set up a new box.
 
+<sub>started 19 Jul 2026 · last push 20 Jul 2026</sub>
+
 </td>
 </tr>
 </table>
+<!--/projects-->
 
 ---
 
@@ -152,10 +166,10 @@ every time I set up a new box.
 
 <p align="center">
   <sub>
-    Every number above is read from the GitHub API and redrawn by
-    <a href="scripts/build.py"><code>scripts/build.py</code></a> on a
-    <a href=".github/workflows/refresh.yml">six-hourly schedule</a> — no third-party
-    badge service, nothing hand-typed, nothing to go stale.
+    Every number above — and every project card — is read from the GitHub API and
+    rebuilt by <a href="scripts/build.py"><code>scripts/build.py</code></a>
+    <a href=".github/workflows/refresh.yml">every ten minutes</a>. No third-party badge
+    service, nothing hand-typed. Ship a new repository and it appears here on its own.
   </sub>
 </p>
 

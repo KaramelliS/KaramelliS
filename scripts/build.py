@@ -61,7 +61,10 @@ query($login: String!) {
                  orderBy: {field: CREATED_AT, direction: ASC}) {
       totalCount
       nodes {
-        name createdAt stargazerCount isFork
+        name createdAt pushedAt stargazerCount isFork isArchived
+        description
+        licenseInfo { spdxId }
+        repositoryTopics(first: 6) { nodes { topic { name } } }
         primaryLanguage { name }
         languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
           edges { size node { name } }
@@ -449,30 +452,163 @@ def build_langs(repos):
     return "\n".join(p) + "\n"
 
 
-def update_readme(repos):
-    """Refresh the star counts written into the project cards.
+# --------------------------------------------------------------------------- project cards
 
-    The cards are hand-written prose worth keeping, so only the bit between
-    <!--stars:name--> and <!--/stars--> is rewritten. A repo with no stars
-    yet collapses to nothing rather than advertising a zero.
+# Prose worth keeping, written by hand, for the projects that deserve a real
+# description. Anything NOT in here still gets a card — built from the repo's
+# own GitHub description — so a new repository shows up on the profile without
+# anyone editing this file. That is the whole point: the grid is generated, so
+# it cannot fall behind the account.
+CURATED = {
+    "aterkeep": ("🦀", ["Rust", "axum", "tokio"], """A self-hosted manager that keeps a free Aternos Minecraft
+server online 24/7. One ~2.3 MB binary: keep-alive loop,
+embedded web panel in **14 languages**, live console,
+anti-idle Minecraft bot, AES-256-GCM encrypted session.
+
+**Hardest part:** the queue. Aternos opens a ~30 second
+window when your turn comes and sends you to the back if
+nobody answers — which is why plain keep-alive scripts wait
+forever. This one answers it.
+
+*Pure HTTP. No Selenium, no Puppeteer, no browser.*"""),
+
+    "shortlink-bypass": ("🔗", ["Python", "curl"], """Resolves link-gateway services — linkvertise, adf.ly,
+cpmlink, boost.ink, aylink — straight to the destination.
+**1240+ validated redirect followers.**
+
+No browser and no ad rendering: each gateway is a
+reverse-engineered redirect chain, so it runs in
+milliseconds where a headless browser needs seconds.
+
+Packaged with `pyproject.toml`, a one-line `install.sh`
+and GitHub Actions CI. Dead services get retired to
+`shorteners_inactive.txt` rather than silently failing."""),
+
+    "cloudflare-temp-sms": ("📬", ["Node.js", "Fastify", "Redis"], """Turns **Cloudflare Email Routing** into a zero-config
+disposable **temp-mail API**. Create an inbox, receive mail
+by webhook, everything expires on a Redis TTL.
+
+Rate limiting and CORS are built in rather than bolted on,
+and it ships with Docker, Railway and Render configs — so
+deploying it is one command wherever you like."""),
+
+    "comic-translator": ("🗯️", ["Python", "OpenCV", "EasyOCR", "Streamlit"], """A full comic/manga translation pipeline: **speech-bubble
+detection → OCR → translation → text re-rendering** back
+into the original bubble, with a Streamlit UI on top.
+
+The interesting problem isn't the translating, it's putting
+the new text back so the page still looks drawn, not pasted."""),
+
+    "valorant-fandom": ("🎯", ["HTML", "Python", "JavaScript"], """Valorant wiki data as a **serverless JS library** — agents,
+weapons, maps, ranks and skins across 5 modules, served
+directly from GitHub raw URLs.
+
+Scraped once with Python, shipped as static JSON. No API
+key, no backend, no rate limit."""),
+
+    "agent-setup": ("🤖", ["docs"], """Cross-OS setup memory for coding agents — OpenCode, Claude
+Code and Codex — so a Windows, Linux and macOS machine can
+each log what they configured and stay in sync.
+
+Notes rather than a program, but it saves me an afternoon
+every time I set up a new box."""),
+}
+
+NEW_EMOJI = "📦"
+# GitHub reports a custom or unrecognised licence as one of these. Printing
+# "Other" next to a project says nothing, so it is dropped instead.
+LICENCE_NOISE = {"NOASSERTION", "other", "Other", None, ""}
+
+
+def day(iso):
+    return datetime.strptime(iso[:10], "%Y-%m-%d").strftime("%d %b %Y")
+
+
+def render_card(r):
+    """One project card. Curated prose if we have it, the repo's own
+    description if we don't — never an empty cell."""
+    name = r["name"]
+    emoji, stack, blurb = CURATED.get(name, (None, None, None))
+
+    if blurb is None:
+        emoji = NEW_EMOJI
+        lang = (r["primaryLanguage"] or {}).get("name")
+        topics = [t["topic"]["name"] for t in r["repositoryTopics"]["nodes"]]
+        # A repo tagged "go" whose primary language is Go would otherwise read
+        # "`Go` · `go`", so fold anything that differs only by case.
+        stack, seen = [], set()
+        for s in ([lang] if lang else []) + topics:
+            if s.lower() not in seen:
+                seen.add(s.lower())
+                stack.append(s)
+        stack = stack[:4]
+        blurb = (r["description"] or "").strip() or "_Fresh out of the oven — description coming._"
+
+    # Built from parts rather than appended to, so a project with no language
+    # and no licence does not end up with a meta line that opens on a separator.
+    head = " · ".join("`%s`" % s for s in stack)
+    tail = []
+    if r["stargazerCount"]:
+        tail.append("⭐ %d" % r["stargazerCount"])
+    spdx = (r["licenseInfo"] or {}).get("spdxId")
+    if spdx not in LICENCE_NOISE:
+        tail.append(spdx)
+    if r["isArchived"]:
+        tail.append("_archived_")
+    meta = " — ".join(x for x in (head, " · ".join(tail)) if x)
+
+    # Dates, not "3 hours ago". A relative stamp would differ on almost every
+    # run and the workflow would commit every 10 minutes forever; a date only
+    # changes when Berkay actually pushes.
+    foot = "started %s · last push %s" % (day(r["createdAt"]), day(r["pushedAt"]))
+
+    title = "### %s [%s](https://github.com/%s/%s)" % (emoji, name, USER, name)
+    parts = [title] + ([meta] if meta else []) + ["", blurb, "", "<sub>%s</sub>" % foot]
+    return "\n".join(parts)
+
+
+def build_projects(repos):
+    """The whole card grid, two per row, ordered curated-first then newest."""
+    by = {r["name"]: r for r in repos}
+    curated = [n for n in CURATED if n in by]
+    rest = sorted((r for r in repos if r["name"] not in CURATED),
+                  key=lambda r: r["createdAt"], reverse=True)
+    ordered = [by[n] for n in curated] + rest
+
+    rows = []
+    for i in range(0, len(ordered), 2):
+        pair = ordered[i:i + 2]
+        cells = ['<td width="50%" valign="top">\n\n' + render_card(r) + '\n\n</td>' for r in pair]
+        if len(pair) == 1:                      # odd count: keep the grid square
+            cells.append('<td width="50%"></td>')
+        rows.append("<tr>\n" + "\n".join(cells) + "\n</tr>")
+    return "<table>\n" + "\n".join(rows) + "\n</table>"
+
+
+def update_readme(repos):
+    """Rewrite the generated regions of README.md.
+
+    Everything between <!--projects--> and <!--/projects--> is machine-owned;
+    the prose around it is not touched.
     """
     if not os.path.exists(README):
         return False
     with open(README, encoding="utf-8") as f:
         before = f.read()
-    counts = {r["name"]: r["stargazerCount"] for r in repos}
 
-    def sub(m):
-        n = counts.get(m.group(1), 0)
-        return "<!--stars:%s-->%s<!--/stars-->" % (m.group(1), (" — ⭐ %d" % n) if n else "")
-
-    after = re.sub(r"<!--stars:([\w.-]+)-->.*?<!--/stars-->", sub, before, flags=re.S)
+    block = build_projects(repos)
+    after, n = re.subn(r"<!--projects-->.*?<!--/projects-->",
+                       lambda _: "<!--projects-->\n" + block + "\n<!--/projects-->",
+                       before, flags=re.S)
+    if not n:
+        print("WARNING: no <!--projects--> markers in README.md — cards not updated")
+        return False
     if after == before:
         print("unchanged README.md")
         return False
     with open(README, "w", encoding="utf-8", newline="\n") as f:
         f.write(after)
-    print("updated README.md")
+    print("updated README.md (%d project cards)" % len(repos))
     return True
 
 
@@ -505,7 +641,7 @@ def main():
             print("updated %s" % name)
         else:
             print("unchanged %s" % name)
-    update_readme(repos)
+    update_readme(projects)          # the profile repo itself is not a project card
     print("contributions=%d commits=%d repos=%d stars=%d peak=%d hidden=%d"
           % (cc["contributionCalendar"]["totalContributions"],
              cc["totalCommitContributions"], len(repos), stars, peak,
