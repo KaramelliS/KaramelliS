@@ -37,6 +37,11 @@ jobs:
       - name: Rebuild the SVGs from live data
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          # Set only when a personal token is in play. The API cannot be asked
+          # whether it is hiding private work — with GITHUB_TOKEN it reports
+          # zero restricted contributions and simply omits them — so the label
+          # is driven from here instead of guessed.
+          COUNTS_PRIVATE: ${{ secrets.PROFILE_TOKEN != '' && '1' || '' }}
         run: python scripts/build.py
 
       - name: Commit if anything actually moved

@@ -220,12 +220,17 @@ def build_stats(cc, repo_count, stars, busiest):
     # A token that is not Berkay's own can only count public contributions.
     # In CI that is the case, so say "public" rather than quietly showing a
     # smaller number under a label that claims to be the total.
-    hidden = cc.get("restrictedContributionsCount") or 0
-    pub = " public" if hidden else ""
-    note = "%d private not shown" % hidden if hidden else "last 12 months"
+    # Which figure this is depends on the token, and the API will not tell us:
+    # queried by the job's GITHUB_TOKEN, work in private repos is simply absent
+    # and restrictedContributionsCount still comes back 0. So the workflow sets
+    # COUNTS_PRIVATE when a personal token is configured, and the label follows
+    # that rather than pretending to detect it.
+    private = bool(os.environ.get("COUNTS_PRIVATE"))
+    label = "contributions" if private else "public contributions"
+    note = "last 12 months" if private else "private work not counted"
     items = [
-        (cal["totalContributions"], "%scontributions" % (pub.strip() + " " if pub else ""), note),
-        (cc["totalCommitContributions"], "commits", "authored"),
+        (cal["totalContributions"], label, note),
+        (cc["totalCommitContributions"], "commits" if private else "public commits", "authored"),
         (repo_count, "public repos", "all mine, no forks"),
         (stars, "stars earned", "across every repo"),
         (busiest, "busiest day", "commits in 24h"),
@@ -234,7 +239,7 @@ def build_stats(cc, repo_count, stars, busiest):
     p = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
          'role="img" aria-label="GitHub activity: %d contributions, %d commits, %d repositories, %d stars">'
          % (W, H, W, H, cal["totalContributions"], cc["totalCommitContributions"], repo_count, stars)]
-    p += card(W, H, "ACTIVITY · REFRESHED AUTOMATICALLY BY GITHUB ACTIONS" + (" · PUBLIC ONLY" if hidden else ""))
+    p += card(W, H, "ACTIVITY · REFRESHED AUTOMATICALLY BY GITHUB ACTIONS")
 
     n = len(items)
     gap, x0 = 14, 40
@@ -271,9 +276,9 @@ def build_contributions(u):
     p = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
          'role="img" aria-label="Contribution calendar: %d contributions in the last year">'
          % (W, H, W, H, cal["totalContributions"])]
-    hidden = u["contributionsCollection"].get("restrictedContributionsCount") or 0
+    private = bool(os.environ.get("COUNTS_PRIVATE"))
     p += card(W, H, "CONTRIBUTIONS · %d%s IN THE LAST YEAR"
-              % (cal["totalContributions"], " PUBLIC" if hidden else ""))
+              % (cal["totalContributions"], "" if private else " PUBLIC"))
 
     # month labels
     seen = set()
@@ -474,6 +479,7 @@ def main():
           % (cc["contributionCalendar"]["totalContributions"],
              cc["totalCommitContributions"], len(repos), stars, peak,
              cc.get("restrictedContributionsCount") or 0))
+    print("private counted: %s" % bool(os.environ.get("COUNTS_PRIVATE")))
 
 
 if __name__ == "__main__":
