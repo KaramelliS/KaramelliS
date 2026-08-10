@@ -1,0 +1,52 @@
+name: refresh profile
+
+on:
+  schedule:
+    # 06:17, 12:17, 18:17, 00:17 UTC. Off the hour on purpose — GitHub queues
+    # every cron that fires exactly on :00, so odd minutes start sooner.
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    # Deliberately NOT triggered by changes under assets/ — this job commits
+    # to assets/, so watching it would make the workflow retrigger itself.
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/refresh.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # PROFILE_TOKEN is optional. The job's own GITHUB_TOKEN can read the
+      # public contribution calendar; set the secret only if that ever stops
+      # being true, and it will be picked up without editing this file.
+      - name: Rebuild the SVGs from live data
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python scripts/build.py
+
+      - name: Commit if anything actually moved
+        run: |
+          if [ -z "$(git status --porcelain assets)" ]; then
+            echo "No change — the numbers are the same as last run."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "Refresh profile stats"
+          git push

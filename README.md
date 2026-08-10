@@ -135,11 +135,28 @@ every time I set up a new box.
 ---
 
 <p align="center">
-  <img src="assets/timeline.svg" alt="Shipping log: six public repositories between 30 June and 9 August 2026" width="100%"/>
+  <img src="assets/stats.svg" alt="Activity: contributions, commits, repositories and stars" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="assets/contributions.svg" alt="Contribution calendar for the last year" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="assets/timeline.svg" alt="Shipping log: every public project, by the date it was created" width="100%"/>
 </p>
 
 <p align="center">
   <img src="assets/langs.svg" alt="Language distribution measured across public repositories" width="100%"/>
+</p>
+
+<p align="center">
+  <sub>
+    Every number above is read from the GitHub API and redrawn by
+    <a href="scripts/build.py"><code>scripts/build.py</code></a> on a
+    <a href=".github/workflows/refresh.yml">six-hourly schedule</a> — no third-party
+    badge service, nothing hand-typed, nothing to go stale.
+  </sub>
 </p>
 
 ---
