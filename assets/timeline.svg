@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 230" width="1200" height="230" role="img" aria-label="Shipping log: 6 public repositories over 40 days">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 230" width="1200" height="230" role="img" aria-label="Shipping log: 7 public repositories over 42 days">
 <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#1c222a" stroke-width="1"/></pattern><clipPath id="cardclip"><rect x="1" y="1" width="1198" height="228" rx="16"/></clipPath><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.13"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
 <rect x="1" y="1" width="1198" height="228" rx="16" fill="#0f1216" stroke="#2b323d"/>
 <g clip-path="url(#cardclip)"><rect width="1200" height="230" fill="url(#grid)" opacity="0.45"/></g>
-<text x="40" y="38" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e" letter-spacing="1.6">SHIPPING LOG · 6 PUBLIC PROJECTS IN 40 DAYS</text>
+<text x="40" y="38" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e" letter-spacing="1.6">SHIPPING LOG · 7 PUBLIC PROJECTS IN 42 DAYS</text>
 <defs><linearGradient id="ax" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22c55e" stop-opacity="0.35"/><stop offset="0.5" stop-color="#22c55e" stop-opacity="0.9"/><stop offset="1" stop-color="#22c55e" stop-opacity="0.35"/></linearGradient></defs>
 <line x1="110" y1="130" x2="1100" y2="130" stroke="#2b323d" stroke-width="2"/>
 <line x1="110" y1="130" x2="1100" y2="130" stroke="url(#ax)" stroke-width="2"/>
@@ -15,25 +15,29 @@
 <text x="110" y="188" text-anchor="middle" fill="#adbac7">comic-translator</text>
 <text x="110" y="202" text-anchor="middle" fill="#5b6572">Python</text>
 <circle cx="110" cy="130" r="5.5" fill="#0f1216" stroke="#3572A5" stroke-width="2.5"/>
-<line x1="357" y1="130" x2="357" y2="90" stroke="#2b323d"/>
-<text x="357" y="82" text-anchor="middle" fill="#adbac7">valorant-fandom</text>
-<text x="357" y="68" text-anchor="middle" fill="#5b6572">HTML</text>
-<circle cx="357" cy="130" r="5.5" fill="#0f1216" stroke="#e34c26" stroke-width="2.5"/>
-<line x1="580" y1="130" x2="580" y2="172" stroke="#2b323d"/>
-<text x="580" y="188" text-anchor="middle" fill="#adbac7">agent-setup</text>
-<text x="580" y="202" text-anchor="middle" fill="#5b6572">docs</text>
-<circle cx="580" cy="130" r="5.5" fill="#0f1216" stroke="#8b949e" stroke-width="2.5"/>
-<line x1="605" y1="130" x2="605" y2="90" stroke="#2b323d"/>
-<text x="605" y="82" text-anchor="middle" fill="#adbac7">cloudflare-temp-sms</text>
-<text x="605" y="68" text-anchor="middle" fill="#5b6572">JavaScript</text>
-<circle cx="605" cy="130" r="5.5" fill="#0f1216" stroke="#f1e05a" stroke-width="2.5"/>
-<line x1="1100" y1="130" x2="1100" y2="172" stroke="#2b323d"/>
-<text x="1100" y="188" text-anchor="middle" fill="#e6edf3" font-weight="600">aterkeep</text>
-<text x="1100" y="202" text-anchor="middle" fill="#5b6572">Rust · ★7</text>
-<circle cx="1100" cy="130" r="5.5" fill="#0f1216" stroke="#dea584" stroke-width="2.5"/>
+<line x1="345" y1="130" x2="345" y2="90" stroke="#2b323d"/>
+<text x="345" y="82" text-anchor="middle" fill="#adbac7">valorant-fandom</text>
+<text x="345" y="68" text-anchor="middle" fill="#5b6572">HTML</text>
+<circle cx="345" cy="130" r="5.5" fill="#0f1216" stroke="#e34c26" stroke-width="2.5"/>
+<line x1="557" y1="130" x2="557" y2="172" stroke="#2b323d"/>
+<text x="557" y="188" text-anchor="middle" fill="#adbac7">agent-setup</text>
+<text x="557" y="202" text-anchor="middle" fill="#5b6572">docs</text>
+<circle cx="557" cy="130" r="5.5" fill="#0f1216" stroke="#8b949e" stroke-width="2.5"/>
+<line x1="581" y1="130" x2="581" y2="90" stroke="#2b323d"/>
+<text x="581" y="82" text-anchor="middle" fill="#adbac7">cloudflare-temp-sms</text>
+<text x="581" y="68" text-anchor="middle" fill="#5b6572">JavaScript</text>
+<circle cx="581" cy="130" r="5.5" fill="#0f1216" stroke="#f1e05a" stroke-width="2.5"/>
+<line x1="1052" y1="130" x2="1052" y2="172" stroke="#2b323d"/>
+<text x="1052" y="188" text-anchor="middle" fill="#adbac7">aterkeep</text>
+<text x="1052" y="202" text-anchor="middle" fill="#5b6572">Rust · ★7</text>
+<circle cx="1052" cy="130" r="5.5" fill="#0f1216" stroke="#dea584" stroke-width="2.5"/>
+<line x1="1100" y1="130" x2="1100" y2="90" stroke="#2b323d"/>
+<text x="1100" y="82" text-anchor="middle" fill="#e6edf3" font-weight="600">auto-ominous</text>
+<text x="1100" y="68" text-anchor="middle" fill="#5b6572">Java</text>
+<circle cx="1100" cy="130" r="5.5" fill="#0f1216" stroke="#b07219" stroke-width="2.5"/>
 <circle cx="1100" cy="130" r="9" fill="#22c55e" opacity="0.2"><animate attributeName="r" values="7;15;7" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0;0.3" dur="2.8s" repeatCount="indefinite"/></circle>
 </g>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#5b6572">
 <text x="126" y="152" text-anchor="start">30 Jun</text>
-<text x="1084" y="152" text-anchor="end">09 Aug</text>
+<text x="1084" y="152" text-anchor="end">11 Aug</text>
 </g></svg>

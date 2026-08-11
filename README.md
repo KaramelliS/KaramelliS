@@ -143,6 +143,19 @@ every time I set up a new box.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📦 [auto-ominous](https://github.com/KaramelliS/auto-ominous)
+`Java` · `fabric` · `fabricmc` · `minecraft` — MIT
+
+One key drinks an Ominous Bottle from anywhere in your inventory and puts your hotbar back. Fabric, Minecraft 1.21.1 to 1.21.11.
+
+<sub>started 11 Aug 2026 · last push 11 Aug 2026</sub>
+
+</td>
+<td width="50%"></td>
+</tr>
 </table>
 <!--/projects-->
 
