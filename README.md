@@ -40,7 +40,7 @@ That approach is the reason `aterkeep` fits in a 2.3 MB binary with no runtime a
 <td width="50%" valign="top">
 
 ### 🦀 [aterkeep](https://github.com/KaramelliS/aterkeep)
-`Rust` · `axum` · `tokio` — ⭐ 7
+`Rust` · `axum` · `tokio` — ⭐ 6
 
 A self-hosted manager that keeps a free Aternos Minecraft
 server online 24/7. One ~2.3 MB binary: keep-alive loop,
