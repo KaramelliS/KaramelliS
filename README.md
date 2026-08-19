@@ -54,7 +54,7 @@ forever. This one answers it.
 
 *Pure HTTP. No Selenium, no Puppeteer, no browser.*
 
-<sub>started 09 Aug 2026 · last push 12 Aug 2026</sub>
+<sub>started 09 Aug 2026 · last push 19 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -74,7 +74,7 @@ Packaged with `pyproject.toml`, a one-line `install.sh`
 and GitHub Actions CI. Dead services get retired to
 `shorteners_inactive.txt` rather than silently failing.
 
-<sub>started 30 Jun 2026 · last push 03 Jul 2026</sub>
+<sub>started 30 Jun 2026 · last push 19 Aug 2026</sub>
 
 </td>
 </tr>
@@ -92,7 +92,7 @@ Rate limiting and CORS are built in rather than bolted on,
 and it ships with Docker, Railway and Render configs — so
 deploying it is one command wherever you like.
 
-<sub>started 20 Jul 2026 · last push 20 Jul 2026</sub>
+<sub>started 20 Jul 2026 · last push 19 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -107,7 +107,7 @@ into the original bubble, with a Streamlit UI on top.
 The interesting problem isn't the translating, it's putting
 the new text back so the page still looks drawn, not pasted.
 
-<sub>started 30 Jun 2026 · last push 30 Jun 2026</sub>
+<sub>started 30 Jun 2026 · last push 19 Aug 2026</sub>
 
 </td>
 </tr>
@@ -124,7 +124,7 @@ directly from GitHub raw URLs.
 Scraped once with Python, shipped as static JSON. No API
 key, no backend, no rate limit.
 
-<sub>started 10 Jul 2026 · last push 11 Jul 2026</sub>
+<sub>started 10 Jul 2026 · last push 19 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -139,7 +139,7 @@ each log what they configured and stay in sync.
 Notes rather than a program, but it saves me an afternoon
 every time I set up a new box.
 
-<sub>started 19 Jul 2026 · last push 20 Jul 2026</sub>
+<sub>started 19 Jul 2026 · last push 19 Aug 2026</sub>
 
 </td>
 </tr>
@@ -151,7 +151,7 @@ every time I set up a new box.
 
 One key drinks an Ominous Bottle from anywhere in your inventory and puts your hotbar back. Fabric, Minecraft 1.21.1 to 1.21.11.
 
-<sub>started 11 Aug 2026 · last push 11 Aug 2026</sub>
+<sub>started 11 Aug 2026 · last push 19 Aug 2026</sub>
 
 </td>
 <td width="50%"></td>
