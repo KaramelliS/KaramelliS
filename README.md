@@ -146,6 +146,16 @@ every time I set up a new box.
 <tr>
 <td width="50%" valign="top">
 
+### 📦 [reread](https://github.com/KaramelliS/reread)
+`claude` · `claude-code` · `cli` · `rust` — MIT
+
+Where Claude Code tokens actually go: 96% of them are re-reads.
+
+<sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
 ### 📦 [auto-ominous](https://github.com/KaramelliS/auto-ominous)
 `Java` · `fabric` · `fabricmc` · `minecraft` — ⭐ 1 · MIT
 
@@ -154,7 +164,6 @@ One key drinks an Ominous Bottle from anywhere in your inventory and puts your h
 <sub>started 11 Aug 2026 · last push 19 Aug 2026</sub>
 
 </td>
-<td width="50%"></td>
 </tr>
 </table>
 <!--/projects-->
