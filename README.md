@@ -147,7 +147,7 @@ every time I set up a new box.
 <td width="50%" valign="top">
 
 ### 📦 [reread](https://github.com/KaramelliS/reread)
-`claude` · `claude-code` · `cli` · `rust` — MIT
+`Rust` · `claude` · `claude-code` · `cli` — MIT
 
 Where Claude Code tokens actually go: 96% of them are re-reads.
 
