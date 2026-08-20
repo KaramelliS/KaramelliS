@@ -146,6 +146,16 @@ every time I set up a new box.
 <tr>
 <td width="50%" valign="top">
 
+### 📦 [curfew](https://github.com/KaramelliS/curfew)
+`Rust` · `automation` · `claude` · `claude-code` — MIT
+
+Run Claude Code until a wall-clock deadline, then stop.
+
+<sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
 ### 📦 [reread](https://github.com/KaramelliS/reread)
 `Rust` · `claude` · `claude-code` · `cli` — MIT
 
@@ -154,6 +164,8 @@ Where Claude Code tokens actually go: 96% of them are re-reads.
 <sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 ### 📦 [auto-ominous](https://github.com/KaramelliS/auto-ominous)
@@ -164,6 +176,7 @@ One key drinks an Ominous Bottle from anywhere in your inventory and puts your h
 <sub>started 11 Aug 2026 · last push 19 Aug 2026</sub>
 
 </td>
+<td width="50%"></td>
 </tr>
 </table>
 <!--/projects-->
