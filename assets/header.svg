@@ -12,13 +12,13 @@
 </g>
 <rect x="48" y="155" width="9" height="19" fill="#22c55e" opacity="0.9"><animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.4;0.5;0.9;1" dur="1.1s" repeatCount="indefinite"/></rect>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5">
-<rect x="48" y="212" width="162" height="30" rx="15" fill="#171b21" stroke="#2b323d"/>
-<text x="67" y="231" fill="#adbac7">9 public projects</text>
-<rect x="220" y="212" width="221" height="30" rx="15" fill="#171b21" stroke="#2b323d"/>
-<text x="239" y="231" fill="#adbac7">Go · Node · Rust · Python</text>
-<rect x="451" y="212" width="215" height="30" rx="15" fill="#171b21" stroke="#2b323d"/>
-<circle cx="471" cy="227" r="4" fill="#22c55e"><animate attributeName="opacity" values="1;0.25;1" dur="2.2s" repeatCount="indefinite"/></circle>
-<text x="483" y="231" fill="#adbac7">shipping since Jun 2026</text>
+<rect x="48" y="212" width="170" height="30" rx="15" fill="#171b21" stroke="#2b323d"/>
+<text x="67" y="231" fill="#adbac7">10 public projects</text>
+<rect x="228" y="212" width="221" height="30" rx="15" fill="#171b21" stroke="#2b323d"/>
+<text x="247" y="231" fill="#adbac7">Go · Node · Rust · Python</text>
+<rect x="459" y="212" width="215" height="30" rx="15" fill="#171b21" stroke="#2b323d"/>
+<circle cx="479" cy="227" r="4" fill="#22c55e"><animate attributeName="opacity" values="1;0.25;1" dur="2.2s" repeatCount="indefinite"/></circle>
+<text x="491" y="231" fill="#adbac7">shipping since Jun 2026</text>
 </g>
 <rect x="740" y="44" width="412" height="212" rx="10" fill="#0b0d10" stroke="#242a33"/>
 <path d="M740 54a10 10 0 0 1 10-10h392a10 10 0 0 1 10 10v24H740z" fill="#171b21"/>
