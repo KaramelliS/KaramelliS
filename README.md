@@ -1,36 +1,38 @@
-<p align="center">
-  <img src="assets/header.svg" alt="Berkay — @KaramelliS — 18, Tokat, Türkiye. Go, Node, Rust, Python." width="100%"/>
-</p>
+<!--fig-header-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <img alt="Berkay, @KaramelliS. 18, Tokat, Türkiye. I'd rather speak the protocol than drive a browser." src="assets/header-light.svg" width="100%">
+</picture>
+<!--/fig-header-->
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Node.js-3C873A?style=flat-square&logo=node.js&logoColor=white&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Rust-dea584?style=flat-square&logo=rust&logoColor=0b0d10&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logo=python&logoColor=white&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/JavaScript-f1e05a?style=flat-square&logo=javascript&logoColor=0b0d10&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Fastify-3a434f?style=flat-square&logo=fastify&logoColor=white&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white&labelColor=171b21"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white&labelColor=171b21"/>
-</p>
+## The habit
 
----
+Headless Chrome is roughly 300 MB of dependency to press a button that is really
+one HTTP request. So I read the traffic instead, work out what the server
+actually wants, and send that.
 
-## Hey
+The result is smaller, it is faster, and it does not break when somebody renames
+a CSS class. It is why `aterkeep` fits in a 2.3 MB binary with no runtime under
+it, and why `shortlink-bypass` resolves a gateway in milliseconds where a browser
+needs seconds.
 
-I'm **Berkay**, 18, from **Tokat, Türkiye**. I write **Go, Node.js, Rust and Python** and I
-pick whichever one the problem actually wants — a background daemon gets Rust, an
-edge API gets JavaScript, a data pipeline gets Python.
+I'm Berkay, 18, from Tokat. I write Rust, Node.js and Python, and I pick whichever
+one the problem is asking for: a background daemon gets Rust, an edge API gets
+JavaScript, anything with data in it gets Python.
 
-There is one habit running through most of what I build: **I'd rather speak the
-protocol than drive a browser.** Headless Chrome is 300 MB of dependency to press a
-button that is really just an HTTP request. So I read the traffic, work out what the
-server actually wants, and send that. The result is smaller, faster, and it doesn't
-break when someone moves a CSS class.
+<!--fig-fields-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/fields-dark.svg">
+  <img alt="Activity as a struct: contributions, commits, repositories, busiest day and the date the account opened." src="assets/fields-light.svg" width="100%">
+</picture>
+<!--/fig-fields-->
 
-That approach is the reason `aterkeep` fits in a 2.3 MB binary with no runtime at all.
-
----
+<!--fig-calendar-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/calendar-dark.svg">
+  <img alt="The contribution year as a hexdump — one byte per day, the value is that day's commit count." src="assets/calendar-light.svg" width="100%">
+</picture>
+<!--/fig-calendar-->
 
 ## Things I've built
 
@@ -39,163 +41,164 @@ That approach is the reason `aterkeep` fits in a 2.3 MB binary with no runtime a
 <tr>
 <td width="50%" valign="top">
 
-### 🦀 [aterkeep](https://github.com/KaramelliS/aterkeep)
-`Rust` · `axum` · `tokio` — ⭐ 24
+#### [aterkeep](https://github.com/KaramelliS/aterkeep)
+<sub>`Rust` · `axum` · `tokio` — 24 stars</sub>
 
 A self-hosted manager that keeps a free Aternos Minecraft
-server online 24/7. One ~2.3 MB binary: keep-alive loop,
-embedded web panel in **14 languages**, live console,
+server online around the clock. One ~2.3 MB binary: keep-alive
+loop, embedded web panel in **14 languages**, live console,
 anti-idle Minecraft bot, AES-256-GCM encrypted session.
 
-**Hardest part:** the queue. Aternos opens a ~30 second
-window when your turn comes and sends you to the back if
-nobody answers — which is why plain keep-alive scripts wait
-forever. This one answers it.
+**Hardest part:** the queue. Aternos opens a ~30 second window
+when your turn comes and sends you to the back if nobody
+answers, which is why plain keep-alive scripts wait forever.
+This one answers it.
 
-*Pure HTTP. No Selenium, no Puppeteer, no browser.*
+Pure HTTP. No Selenium, no Puppeteer, no browser.
 
-<sub>started 09 Aug 2026 · last push 27 Aug 2026</sub>
+<sub>0x00 · 09 Aug 2026 → 27 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
 
-### 🔗 [shortlink-bypass](https://github.com/KaramelliS/shortlink-bypass)
-`Python` · `curl` — ⭐ 1 · MIT
+#### [shortlink-bypass](https://github.com/KaramelliS/shortlink-bypass)
+<sub>`Python` · `curl` — 1 star — MIT</sub>
 
-Resolves link-gateway services — linkvertise, adf.ly,
-cpmlink, boost.ink, aylink — straight to the destination.
+Resolves link-gateway services — linkvertise, adf.ly, cpmlink,
+boost.ink, aylink — straight to the destination.
 **1240+ validated redirect followers.**
 
-No browser and no ad rendering: each gateway is a
-reverse-engineered redirect chain, so it runs in
-milliseconds where a headless browser needs seconds.
+Each gateway is a reverse-engineered redirect chain rather than
+a rendered page, so it finishes in milliseconds where a headless
+browser needs seconds.
 
-Packaged with `pyproject.toml`, a one-line `install.sh`
-and GitHub Actions CI. Dead services get retired to
-`shorteners_inactive.txt` rather than silently failing.
+Packaged with `pyproject.toml`, a one-line `install.sh` and CI.
+Dead services get retired to `shorteners_inactive.txt` instead
+of failing silently.
 
-<sub>started 30 Jun 2026 · last push 19 Aug 2026</sub>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 📬 [cloudflare-temp-sms](https://github.com/KaramelliS/cloudflare-temp-sms)
-`Node.js` · `Fastify` · `Redis` — MIT
-
-Turns **Cloudflare Email Routing** into a zero-config
-disposable **temp-mail API**. Create an inbox, receive mail
-by webhook, everything expires on a Redis TTL.
-
-Rate limiting and CORS are built in rather than bolted on,
-and it ships with Docker, Railway and Render configs — so
-deploying it is one command wherever you like.
-
-<sub>started 20 Jul 2026 · last push 19 Aug 2026</sub>
-
-</td>
-<td width="50%" valign="top">
-
-### 🗯️ [comic-translator](https://github.com/KaramelliS/comic-translator)
-`Python` · `OpenCV` · `EasyOCR` · `Streamlit`
-
-A full comic/manga translation pipeline: **speech-bubble
-detection → OCR → translation → text re-rendering** back
-into the original bubble, with a Streamlit UI on top.
-
-The interesting problem isn't the translating, it's putting
-the new text back so the page still looks drawn, not pasted.
-
-<sub>started 30 Jun 2026 · last push 19 Aug 2026</sub>
+<sub>0x01 · 30 Jun 2026 → 19 Aug 2026</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 🎯 [valorant-fandom](https://github.com/KaramelliS/valorant-fandom)
-`HTML` · `Python` · `JavaScript`
+#### [cloudflare-temp-sms](https://github.com/KaramelliS/cloudflare-temp-sms)
+<sub>`Node.js` · `Fastify` · `Redis` — MIT</sub>
+
+Turns **Cloudflare Email Routing** into a zero-config disposable
+**temp-mail API**. Create an inbox, receive mail by webhook,
+everything expires on a Redis TTL.
+
+Rate limiting and CORS are built in rather than bolted on, and
+it ships with Docker, Railway and Render configs, so deploying
+it is one command wherever you like.
+
+<sub>0x02 · 20 Jul 2026 → 19 Aug 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
+#### [comic-translator](https://github.com/KaramelliS/comic-translator)
+<sub>`Python` · `OpenCV` · `EasyOCR` · `Streamlit`</sub>
+
+A full comic and manga translation pipeline: **speech-bubble
+detection, OCR, translation, then re-rendering** the new text
+back into the original bubble, with a Streamlit UI on top.
+
+The interesting problem is not the translating. It is putting
+the text back so the page still looks drawn rather than
+pasted.
+
+<sub>0x03 · 30 Jun 2026 → 19 Aug 2026</sub>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### [valorant-fandom](https://github.com/KaramelliS/valorant-fandom)
+<sub>`HTML` · `Python` · `JavaScript`</sub>
 
 Valorant wiki data as a **serverless JS library** — agents,
-weapons, maps, ranks and skins across 5 modules, served
-directly from GitHub raw URLs.
+weapons, maps, ranks and skins across 5 modules, served straight
+from GitHub raw URLs.
 
-Scraped once with Python, shipped as static JSON. No API
-key, no backend, no rate limit.
+Scraped once with Python, shipped as static JSON. No API key, no
+backend, no rate limit.
 
-<sub>started 10 Jul 2026 · last push 19 Aug 2026</sub>
+<sub>0x04 · 10 Jul 2026 → 19 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
 
-### 🤖 [agent-setup](https://github.com/KaramelliS/agent-setup)
-`docs`
+#### [agent-setup](https://github.com/KaramelliS/agent-setup)
+<sub>`docs`</sub>
 
-Cross-OS setup memory for coding agents — OpenCode, Claude
-Code and Codex — so a Windows, Linux and macOS machine can
-each log what they configured and stay in sync.
+Cross-OS setup memory for coding agents — OpenCode, Claude Code
+and Codex — so a Windows, Linux and macOS machine can each log
+what they configured and stay in sync.
 
-Notes rather than a program, but it saves me an afternoon
-every time I set up a new box.
+Notes rather than a program, but it saves an afternoon every
+time a new box gets set up.
 
-<sub>started 19 Jul 2026 · last push 19 Aug 2026</sub>
+<sub>0x05 · 19 Jul 2026 → 19 Aug 2026</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 📦 [yanmasa](https://github.com/KaramelliS/yanmasa)
-`Python`
+#### [yanmasa](https://github.com/KaramelliS/yanmasa)
+<sub>`Python`</sub>
 
 Windows 11 bilgisayar kontrol ajanı — Claude computer-use, PySide6 arayüz, ikinci imleç için ayrı bir masaüstü
 
-<sub>started 27 Aug 2026 · last push 27 Aug 2026</sub>
+<sub>0x06 · 27 Aug 2026 → 27 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
 
-### 📦 [kablo](https://github.com/KaramelliS/kablo)
-`Kotlin`
+#### [kablo](https://github.com/KaramelliS/kablo)
+<sub>`Kotlin`</sub>
 
 Run Claude Code on your desktop from your phone. QR pairing, free Cloudflare tunnel, no server.
 
-<sub>started 22 Aug 2026 · last push 22 Aug 2026</sub>
+<sub>0x07 · 22 Aug 2026 → 22 Aug 2026</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 📦 [curfew](https://github.com/KaramelliS/curfew)
-`Rust` · `automation` · `claude` · `claude-code` — MIT
+#### [curfew](https://github.com/KaramelliS/curfew)
+<sub>`Rust` · `automation` · `claude` · `claude-code` — MIT</sub>
 
 Run Claude Code until a wall-clock deadline, then stop.
 
-<sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
+<sub>0x08 · 20 Aug 2026 → 20 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
 
-### 📦 [reread](https://github.com/KaramelliS/reread)
-`Rust` · `claude` · `claude-code` · `cli` — MIT
+#### [reread](https://github.com/KaramelliS/reread)
+<sub>`Rust` · `claude` · `claude-code` · `cli` — MIT</sub>
 
 Where Claude Code tokens actually go: 96% of them are re-reads.
 
-<sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
+<sub>0x09 · 20 Aug 2026 → 20 Aug 2026</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 📦 [auto-ominous](https://github.com/KaramelliS/auto-ominous)
-`Java` · `fabric` · `fabricmc` · `minecraft` — ⭐ 1 · MIT
+#### [auto-ominous](https://github.com/KaramelliS/auto-ominous)
+<sub>`Java` · `fabric` · `fabricmc` · `minecraft` — 1 star — MIT</sub>
 
 One key drinks an Ominous Bottle from anywhere in your inventory and puts your hotbar back. Fabric, Minecraft 1.21.1 to 1.21.11.
 
-<sub>started 11 Aug 2026 · last push 19 Aug 2026</sub>
+<sub>0x0A · 11 Aug 2026 → 19 Aug 2026</sub>
 
 </td>
 <td width="50%"></td>
@@ -203,76 +206,94 @@ One key drinks an Ominous Bottle from anywhere in your inventory and puts your h
 </table>
 <!--/projects-->
 
----
+<!--fig-segments-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/segments-dark.svg">
+  <img alt="Every public project as a segment on one time axis, from the day its repository was created to its last push." src="assets/segments-light.svg" width="100%">
+</picture>
+<!--/fig-segments-->
 
-<p align="center">
-  <img src="assets/stats.svg" alt="Activity: contributions, commits, repositories and stars" width="100%"/>
-</p>
+<!--fig-langs-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/langs-dark.svg">
+  <img alt="Languages as a memory map, sized by the bytes of source GitHub reports for each one." src="assets/langs-light.svg" width="100%">
+</picture>
+<!--/fig-langs-->
 
-<p align="center">
-  <img src="assets/contributions.svg" alt="Contribution calendar for the last year" width="100%"/>
-</p>
+## What this page is not telling you
 
-<p align="center">
-  <img src="assets/timeline.svg" alt="Shipping log: every public project, by the date it was created" width="100%"/>
-</p>
+Every profile shows its wins. Here is the other column, because a page without one
+is a sales pitch.
 
-<p align="center">
-  <img src="assets/langs.svg" alt="Language distribution measured across public repositories" width="100%"/>
-</p>
+- **The account is young.** It opened in June 2026. The contribution wall above is
+  mostly empty for a reason, and the figure marks exactly where it stops being
+  empty rather than cropping the year to look busier.
+- **Stars are not users.** `aterkeep` has 24 of them and the rest of the account
+  has 2. Across all eleven projects there is one fork and zero issues, which is
+  what it looks like when people like the README and never run the thing. I have
+  not done the work of getting any of this in front of someone who would.
+- **The language split is lopsided.** Python is 58% of my public source and Rust
+  is 18%. I describe myself as writing three languages; the bytes describe someone
+  who reaches for Python first.
+- **Test coverage is thin.** `shortlink-bypass` has CI and a validated gateway
+  list. Most of the rest is verified by running it, which is not the same thing.
+- **Some repositories are dumps, not products.** `agent-setup` is notes.
+  `valorant-fandom` is scraped JSON. They are on the profile because they are
+  real, not because they are finished.
 
-<p align="center">
-  <sub>
-    Every number above — and every project card — is read from the GitHub API and
-    rebuilt by <a href="scripts/build.py"><code>scripts/build.py</code></a>, running
-    <a href=".github/workflows/refresh.yml">in GitHub Actions</a> on a schedule and on
-    every push. No third-party badge service, nothing hand-typed. Ship a new repository
-    and it appears here on its own.
-  </sub>
-</p>
+## Now
 
----
+- Turning **aterkeep** into something a stranger can install: 14 languages,
+  installers for three platforms, a design system, a promo video per language.
+- Reading a lot of **Go**. Nothing public in it yet, so it is not in the list
+  above — it goes there the day there is a repository to point at.
+- Whatever catches my attention next. I'm 18 and I would rather stay curious than
+  specialise early.
 
-## What I'm on now
+## How this page is built
 
-- Turning **aterkeep** into a finished product — 14 languages, installers for three
-  platforms, a design system, and a promo video per language
-- More **Go** — nothing public in it yet, but that's where a lot of my reading goes
-- Whatever catches my attention next. I'm 18 and I'd rather stay curious than
-  specialise too early
+Every figure above is drawn by [`scripts/build.py`](scripts/build.py) from the
+GitHub GraphQL API, on a schedule and on every push
+[in Actions](.github/workflows/refresh.yml). No badge service, nothing hand-typed,
+no number that can quietly go stale.
+
+The figures are not decoration with data poured in. The language map's addresses
+are the real byte counts GitHub reports per language. The calendar is a hexdump
+where each byte is that day's commit count, so it reads as a heat map from a
+distance and as data up close. The wordmark is drawn as paths rather than set in a
+font, because no webfont survives GitHub's SVG sanitiser and the closest installed
+face would have been a worse answer than drawing six letters.
+
+Each figure is written twice, once per theme, and paired in a `<picture>`, so a
+reader on GitHub's light theme is not handed a black slab.
 
 <details>
-<summary><b>🇹🇷 Türkçe</b></summary>
+<summary><b>Türkçe</b></summary>
 
 <br/>
 
-Merhaba, ben **Berkay**. 18 yaşındayım, **Tokat**'ta yaşıyorum. **Go, Node.js, Rust ve
+Merhaba, ben **Berkay**. 18 yaşındayım, **Tokat**'ta yaşıyorum. **Rust, Node.js ve
 Python** yazıyorum ve problem hangisini istiyorsa onu kullanıyorum.
 
-Yaptığım işlerin çoğunda ortak bir alışkanlık var: **tarayıcı sürmektense protokolü
-kendim konuşmayı tercih ediyorum.** Aslında tek bir HTTP isteğinden ibaret olan bir
-düğmeye basmak için 300 MB'lık headless Chrome taşımanın anlamı yok. Trafiği okuyup
-sunucunun gerçekte ne istediğini çıkarıyorum ve onu gönderiyorum. Sonuç daha küçük,
-daha hızlı oluyor ve biri bir CSS sınıfının adını değiştirdiğinde bozulmuyor.
+Yaptığım işlerin çoğunda ortak bir alışkanlık var: **tarayıcı sürmektense
+protokolü kendim konuşmayı tercih ediyorum.** Aslında tek bir HTTP isteğinden
+ibaret olan bir düğmeye basmak için 300 MB'lık headless Chrome taşımanın anlamı
+yok. Trafiği okuyup sunucunun gerçekte ne istediğini çıkarıyorum ve onu
+gönderiyorum. Sonuç daha küçük, daha hızlı oluyor ve biri bir CSS sınıfının adını
+değiştirdiğinde bozulmuyor.
 
-`aterkeep`'in hiçbir runtime'a ihtiyaç duymadan 2.3 MB'lık tek bir binary'ye sığmasının
-sebebi bu.
+`aterkeep`'in hiçbir runtime'a ihtiyaç duymadan 2.3 MB'lık tek bir binary'ye
+sığmasının sebebi bu.
+
+Yukarıdaki "What this page is not telling you" bölümü de aynı sebepten var: hesap
+yeni, yıldızlar tek haneli ve dil dağılımı Python'a fena hâlde kayık. Bunları
+saklamak yerine ölçüp yazmak bana daha doğru geliyor.
 
 </details>
 
 ## Reach me
 
-<p align="center">
-  <a href="mailto:berlaylc2138@gmail.com"><img src="https://img.shields.io/badge/berlaylc2138@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=171b21"/></a>
-  <a href="https://github.com/KaramelliS"><img src="https://img.shields.io/badge/@KaramelliS-181717?style=flat-square&logo=github&logoColor=white&labelColor=171b21"/></a>
-</p>
+**berlaylc2138@gmail.com** · [@KaramelliS](https://github.com/KaramelliS)
 
-<p align="center">
-  <sub>Open to interesting problems — especially anything involving a protocol nobody documented.</sub>
-</p>
-
-<p align="center">
-  <sub>Built in the open · <a href="https://github.com/KaramelliS?tab=repositories">all repositories →</a></sub>
-</p>
-
-<!-- profile -->
+Open to interesting problems, especially anything involving a protocol nobody
+documented.
