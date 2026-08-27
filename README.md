@@ -40,7 +40,7 @@ That approach is the reason `aterkeep` fits in a 2.3 MB binary with no runtime a
 <td width="50%" valign="top">
 
 ### 🦀 [aterkeep](https://github.com/KaramelliS/aterkeep)
-`Rust` · `axum` · `tokio` — ⭐ 6
+`Rust` · `axum` · `tokio` — ⭐ 24
 
 A self-hosted manager that keeps a free Aternos Minecraft
 server online 24/7. One ~2.3 MB binary: keep-alive loop,
@@ -54,7 +54,7 @@ forever. This one answers it.
 
 *Pure HTTP. No Selenium, no Puppeteer, no browser.*
 
-<sub>started 09 Aug 2026 · last push 19 Aug 2026</sub>
+<sub>started 09 Aug 2026 · last push 27 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -146,6 +146,16 @@ every time I set up a new box.
 <tr>
 <td width="50%" valign="top">
 
+### 📦 [yanmasa](https://github.com/KaramelliS/yanmasa)
+`Python`
+
+Windows 11 bilgisayar kontrol ajanı — Claude computer-use, PySide6 arayüz, ikinci imleç için ayrı bir masaüstü
+
+<sub>started 27 Aug 2026 · last push 27 Aug 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
 ### 📦 [kablo](https://github.com/KaramelliS/kablo)
 `Kotlin`
 
@@ -154,6 +164,8 @@ Run Claude Code on your desktop from your phone. QR pairing, free Cloudflare tun
 <sub>started 22 Aug 2026 · last push 22 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 ### 📦 [curfew](https://github.com/KaramelliS/curfew)
@@ -164,8 +176,6 @@ Run Claude Code until a wall-clock deadline, then stop.
 <sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 ### 📦 [reread](https://github.com/KaramelliS/reread)
@@ -176,6 +186,8 @@ Where Claude Code tokens actually go: 96% of them are re-reads.
 <sub>started 20 Aug 2026 · last push 20 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 ### 📦 [auto-ominous](https://github.com/KaramelliS/auto-ominous)
@@ -186,6 +198,7 @@ One key drinks an Ominous Bottle from anywhere in your inventory and puts your h
 <sub>started 11 Aug 2026 · last push 19 Aug 2026</sub>
 
 </td>
+<td width="50%"></td>
 </tr>
 </table>
 <!--/projects-->
