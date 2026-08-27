@@ -150,7 +150,7 @@ time a new box gets set up.
 <td width="50%" valign="top">
 
 #### [yanmasa](https://github.com/KaramelliS/yanmasa)
-<sub>`Python`</sub>
+<sub>`Python` — 1 star</sub>
 
 Windows 11 bilgisayar kontrol ajanı — Claude computer-use, PySide6 arayüz, ikinci imleç için ayrı bir masaüstü
 
