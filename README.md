@@ -228,13 +228,13 @@ is a sales pitch.
 - **The account is young.** It opened in June 2026. The contribution wall above is
   mostly empty for a reason, and the figure marks exactly where it stops being
   empty rather than cropping the year to look busier.
-- **Stars are not users.** `aterkeep` has 24 of them and the rest of the account
-  has 2. Across all eleven projects there is one fork and zero issues, which is
-  what it looks like when people like the README and never run the thing. I have
-  not done the work of getting any of this in front of someone who would.
-- **The language split is lopsided.** Python is 58% of my public source and Rust
-  is 18%. I describe myself as writing three languages; the bytes describe someone
-  who reaches for Python first.
+- **Stars are not users.** Nearly all of mine are on one repository. Across every
+  project there is a single fork and not one issue, which is what it looks like
+  when people like the README and never run the thing. I have not done the work
+  of getting any of this in front of someone who would.
+- **The language split is lopsided.** Look at the map above: Python is most of my
+  public source and Rust is most of the rest. I describe myself as writing three
+  languages; the bytes describe someone who reaches for Python first.
 - **Test coverage is thin.** `shortlink-bypass` has CI and a validated gateway
   list. Most of the rest is verified by running it, which is not the same thing.
 - **Some repositories are dumps, not products.** `agent-setup` is notes.

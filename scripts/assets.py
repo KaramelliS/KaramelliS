@@ -101,19 +101,19 @@ def build_header(theme_name, u, projects):
     mark, mw, mh = wordmark("BERKAY", M, 118, 0.79, t["wordmark"])
     p.append(mark)
 
-    p.append('<text x="%d" y="%d" font-family="%s" font-size="13" fill="%s" '
-             'letter-spacing="0.8">@KaramelliS</text>' % (M, 258, MONO, t["ink"]))
-    for i, (lab, val) in enumerate([("age", "18"), ("origin", "Tokat, TR"), ("since", since)]):
-        y = 292 + i * 26
-        p.append('<text x="%d" y="%d" font-family="%s" font-size="12" fill="%s">%s</text>'
-                 % (M, y, MONO, t["ink3"], esc(lab)))
-        p.append('<text x="%d" y="%d" font-family="%s" font-size="12" fill="%s">%s</text>'
-                 % (M + 74, y, MONO, t["ink2"], esc(val)))
+    p.append('<text x="%d" y="%d" font-family="%s" font-size="12.5" fill="%s" '
+             'letter-spacing="0.6">@KaramelliS · 18 · Tokat, Türkiye · since %s</text>'
+             % (M, 262, MONO, t["ink3"], esc(since)))
 
-    p += rule(t, 376, M, 560, t["rule2"])
+    for i, line in enumerate(("I'd rather speak the protocol", "than drive a browser.")):
+        p.append('<text x="%d" y="%d" font-family="%s" font-size="21" fill="%s" '
+                 'letter-spacing="-0.3">%s</text>'
+                 % (M, 312 + i * 30, MONO, t["ink"], esc(line)))
+
+    p += rule(t, 372, M, 560, t["rule2"])
     p.append('<text x="%d" y="%d" font-family="%s" font-size="13.5" fill="%s">'
              '%d public projects · Rust, Node, Python</text>'
-             % (M, 404, MONO, t["ink2"], projects))
+             % (M, 400, MONO, t["ink2"], projects))
 
     # --- right: the same sentence, as the bytes it actually is
     dx, dy, rh = 660, 104, 22
@@ -125,7 +125,7 @@ def build_header(theme_name, u, projects):
 
     raw = THESIS.encode("utf-8")
     raw = raw + b" " * (DUMP_COLS * DUMP_ROWS - len(raw))
-    hexw, asciiw = 21.5, 11.5
+    hexw, asciiw = 21.5, 7.35
     ascii_x = dx + 62 + DUMP_COLS * hexw + 18
     for r in range(DUMP_ROWS):
         y = dy + 14 + r * rh
@@ -216,96 +216,144 @@ DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 def build_calendar(theme_name, u):
     """The contribution year as a hexdump: one byte per day, the value is that
     day's commit count, and the cell colour is the same number again. It reads
-    as a heat map from across the room and as data up close."""
+    as a heat map from across the room and as data up close.
+
+    Forty-two of the fifty-three weeks predate the account. Drawing them as
+    forty-two columns of empty boxes spends three quarters of the figure saying
+    nothing and squeezes the real data into cells too small to print a byte in.
+    So the dead stretch is broken out of the axis the way a drawing breaks a
+    long member: compressed into one band, marked with a break, and labelled
+    with exactly how much was taken out. Nothing is hidden. It is stated once
+    instead of tiled four hundred times.
+    """
     t = THEMES[theme_name]
     weeks = u["contributionsCollection"]["contributionCalendar"]["weeks"]
     opened = datetime.strptime(u["createdAt"][:10], "%Y-%m-%d").date()
     peak = max((d["contributionCount"] for w in weeks for d in w["contributionDays"]), default=1)
 
-    lab_w, gap = 44, 3
-    n = len(weeks)
-    cw = (CONTENT - lab_w - 8) / n
-    ch = 26
+    def is_live(wk):
+        return any(datetime.strptime(d["date"], "%Y-%m-%d").date() >= opened
+                   for d in wk["contributionDays"])
+
+    dead = [w for w in weeks if not is_live(w)]
+    live = [w for w in weeks if is_live(w)] or weeks
+
+    lab_w, gap = 44, 4
+    ch = 42
+    top = 104
     gx = M + lab_w + 8
-    top = 96
-    H = int(top + 7 * ch + 78)
+    void_w = 372 if dead else 0
+    brk = 30 if dead else 0
+    lx = gx + void_w + brk
+    cw = (M + CONTENT - lx) / len(live)
+    grid_h = 7 * ch - gap
+    H = int(top + grid_h + 88)
 
     total = u["contributionsCollection"]["contributionCalendar"]["totalContributions"]
-    p = head(W, H, "Contribution calendar: %d contributions over %d weeks, peak %d in one day"
-             % (total, n, peak))
+    p = head(W, H, "Contribution calendar: %d contributions, peak %d in one day. "
+             "%d weeks before the account existed are compressed out of the axis."
+             % (total, peak, len(dead)))
     p += plate(t, W, H)
     p += caption(t, 52, "hexdump contributions.cal",
                  "one byte per day · value = commits · peak 0x%02x" % peak)
 
-    # month ruler
-    seen = set()
-    for i, wk in enumerate(weeks):
-        d = datetime.strptime(wk["contributionDays"][0]["date"], "%Y-%m-%d").date()
-        if d.month not in seen and d.day <= 7:
-            seen.add(d.month)
-            p.append('<text x="%.1f" y="%d" font-family="%s" font-size="10" fill="%s" '
-                     'letter-spacing="1">%s</text>'
-                     % (gx + i * cw, top - 12, MONO, t["ink3"], MONTHS[d.month - 1]))
-    p += rule(t, top - 4, gx, n * cw, t["rule2"])
+    # --- the elided stretch
+    if dead:
+        p.append('<rect x="%.1f" y="%d" width="%d" height="%d" fill="%s"/>'
+                 % (gx, top, void_w, grid_h, t["inset"]))
+        p.append('<text x="%.1f" y="%.1f" font-family="%s" font-size="14" fill="%s" '
+                 'text-anchor="middle">%d weeks elided</text>'
+                 % (gx + void_w / 2, top + grid_h / 2 - 4, MONO, t["ink2"], len(dead)))
+        p.append('<text x="%.1f" y="%.1f" font-family="%s" font-size="11.5" fill="%s" '
+                 'text-anchor="middle">the account did not exist yet</text>'
+                 % (gx + void_w / 2, top + grid_h / 2 + 20, MONO, t["ink3"]))
+        p.append('<text x="%.1f" y="%d" font-family="%s" font-size="10" fill="%s" '
+                 'letter-spacing="1">%s</text>'
+                 % (gx, top - 12, MONO, t["ink3"],
+                    datetime.strptime(weeks[0]["contributionDays"][0]["date"],
+                                      "%Y-%m-%d").strftime("%b %Y")))
+        # The pair of slashes a drawing uses to say a length was taken out, so
+        # the axis is never mistaken for a continuous one.
+        for k in (0, 1):
+            bx = gx + void_w + 10 + k * 9
+            p.append('<path d="M%.1f %.1f L%.1f %.1f" stroke="%s" stroke-width="1.5" '
+                     'fill="none"/>'
+                     % (bx - 5, top + grid_h + 6, bx + 5, top - 6, t["ink3"]))
 
     for r in range(7):
-        p.append('<text x="%d" y="%.1f" font-family="%s" font-size="10" fill="%s">%s</text>'
-                 % (M, top + r * ch + 17, MONO, t["ink3"], DAYS[r]))
+        p.append('<text x="%d" y="%.1f" font-family="%s" font-size="11" fill="%s">%s</text>'
+                 % (M, top + r * ch + 25, MONO, t["ink3"], DAYS[r]))
 
-    for i, wk in enumerate(weeks):
+    # --- month ruler over the live stretch only
+    #
+    # The "account opens" label shares this row and is far wider than a month
+    # name, so it claims its own span first and any month tick landing inside
+    # that span is dropped rather than printed through it.
+    opens_label = "account opens · " + opened.strftime("%d %b %Y")
+    opens_x = lx - gap + 7
+    opens_end = opens_x + len(opens_label) * 6.9
+
+    seen = set()
+    for i, wk in enumerate(live):
+        d = datetime.strptime(wk["contributionDays"][0]["date"], "%Y-%m-%d").date()
+        if d.month in seen:
+            continue
+        seen.add(d.month)
+        mx = lx + i * cw
+        if mx < opens_end:
+            continue
+        p.append('<text x="%.1f" y="%d" font-family="%s" font-size="10" fill="%s" '
+                 'letter-spacing="1">%s</text>'
+                 % (mx, top - 12, MONO, t["ink3"], MONTHS[d.month - 1]))
+
+    for i, wk in enumerate(live):
         by_day = {d["weekday"]: d for d in wk["contributionDays"]}
         for r in range(7):
             d = by_day.get(r)
             if d is None:
                 continue
-            x, y = gx + i * cw, top + r * ch
+            x, y = lx + i * cw, top + r * ch
             day = datetime.strptime(d["date"], "%Y-%m-%d").date()
             cnt = d["contributionCount"]
             if day < opened:
-                # Before the account existed there is no byte at all, so the
-                # cell is unwritten stock with a hairline, not a filled zero.
-                # A filled cell would be a claim about a day that has none.
+                # A few days of the first live week still predate the account.
+                # They get the hairline, not a filled zero: a filled cell would
+                # be a claim about a day that has none.
                 p.append('<rect x="%.2f" y="%.1f" width="%.2f" height="%d" fill="none" '
                          'stroke="%s" stroke-width="0.75"/>'
                          % (x + 0.4, y + 0.4, cw - gap - 0.8, ch - gap - 1, t["rule2"]))
                 continue
             lvl = 0 if cnt == 0 else 1 + min(3, int(3 * (cnt - 1) / max(1, peak - 1)))
             fill = t["heat"][lvl]
-            p.append('<rect x="%.2f" y="%d" width="%.2f" height="%d" fill="%s"/>'
+            p.append('<rect x="%.2f" y="%.1f" width="%.2f" height="%d" fill="%s"/>'
                      % (x, y, cw - gap, ch - gap, fill))
             if cnt:
-                p.append('<text x="%.2f" y="%d" font-family="%s" font-size="9.5" fill="%s" '
+                p.append('<text x="%.2f" y="%.1f" font-family="%s" font-size="15" fill="%s" '
                          'text-anchor="middle">%02x</text>'
-                         % (x + (cw - gap) / 2, y + 15, MONO, on(fill, t), min(cnt, 255)))
+                         % (x + (cw - gap) / 2, y + (ch - gap) / 2 + 5, MONO,
+                            on(fill, t), min(cnt, 255)))
 
-    # Where the empty half of the year stops being empty. Without this the
-    # reader is left to work out whether nine blank months mean an idle year
-    # or an account that did not exist yet.
-    for i, wk in enumerate(weeks):
-        if any(datetime.strptime(d["date"], "%Y-%m-%d").date() >= opened
-               for d in wk["contributionDays"]):
-            mx = gx + i * cw - gap / 2
-            p.append('<rect x="%.2f" y="%d" width="1.5" height="%d" fill="%s"/>'
-                     % (mx, top - 22, 7 * ch + 8, t["accent"]))
-            p.append('<text x="%.2f" y="%d" font-family="%s" font-size="10" fill="%s" '
-                     'letter-spacing="0.8">account opens · %s</text>'
-                     % (mx + 7, top - 26, MONO, t["accent"], opened.strftime("%d %b %Y")))
-            break
+    # Where the elided stretch ends and the record begins.
+    p.append('<rect x="%.1f" y="%d" width="1.5" height="%d" fill="%s"/>'
+             % (lx - gap, top - 4, grid_h + 8, t["accent"]))
+    p.append('<text x="%.1f" y="%d" font-family="%s" font-size="10" fill="%s" '
+             'letter-spacing="0.8">%s</text>'
+             % (opens_x, top - 12, MONO, t["accent"], esc(opens_label)))
 
     # legend
-    ly = top + 7 * ch + 26
+    ly = top + grid_h + 32
     p.append('<text x="%d" y="%d" font-family="%s" font-size="10" fill="%s">0x00</text>'
              % (M, ly + 12, MONO, t["ink3"]))
     for i, c in enumerate(t["heat"]):
-        p.append('<rect x="%d" y="%d" width="22" height="16" fill="%s"/>' % (M + 40 + i * 26, ly, c))
+        p.append('<rect x="%d" y="%d" width="22" height="16" fill="%s"/>'
+                 % (M + 40 + i * 26, ly, c))
     p.append('<text x="%d" y="%d" font-family="%s" font-size="10" fill="%s">0x%02x</text>'
              % (M + 40 + 5 * 26 + 4, ly + 12, MONO, t["ink3"], peak))
     p.append('<text x="%d" y="%d" font-family="%s" font-size="10" fill="%s" text-anchor="end">'
-             'blank cells predate the account · a day with no commit carries no byte</text>'
+             'a hairline cell is a day with no byte · a blank cell is a day with no commit</text>'
              % (W - M, ly + 12, MONO, t["ink3"]))
     p.append("</svg>")
     return "\n".join(p) + "\n"
-
 
 # --------------------------------------------------------------------------- 3. segments
 
@@ -330,16 +378,13 @@ def build_segments(theme_name, projects, lang_colour):
 
     p = head(W, H, "Segment map: %d projects between %s and %s" % (len(items), lo, hi))
     p += plate(t, W, H)
-    p += caption(t, 52, "segment map", "created → last push · %d days" % span)
-    p.append('<text x="%.1f" y="%d" font-family="%s" font-size="10" fill="%s">%s</text>'
-             % (ax, top - 26, MONO, t["accent"], lo.strftime("%d %b")))
+    p += caption(t, 52, "segment map", "%s → %s · %d days"
+                 % (lo.strftime("%d %b"), hi.strftime("%d %b"), span))
 
     # month grid, drawn behind everything
     cur = date(lo.year, lo.month, 1)
     while cur <= hi:
-        # The axis already carries its own start date at x=ax; a month tick
-        # landing within a label's width of it prints one string over another.
-        if cur >= lo and px(cur) - ax > 52:
+        if cur >= lo:
             x = px(cur)
             p.append('<rect x="%.1f" y="%d" width="1" height="%d" fill="%s"/>'
                      % (x, top - 18, len(items) * rh + 20, t["rule2"]))
