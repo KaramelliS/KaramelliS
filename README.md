@@ -150,11 +150,11 @@ time a new box gets set up.
 <td width="50%" valign="top">
 
 #### [yanmasa](https://github.com/KaramelliS/yanmasa)
-<sub>`Python` — 1 star</sub>
+<sub>`Python` · `agentic-ai` · `ai-agent` · `ai-assistant` — 1 star — MIT</sub>
 
-Windows 11 bilgisayar kontrol ajanı — Claude computer-use, PySide6 arayüz, ikinci imleç için ayrı bir masaüstü
+A Windows 11 computer-control agent that gets its own desktop and its own cursor — so it works while you keep using yours. Claude computer-use + PySide6.
 
-<sub>0x06 · 27 Aug 2026 → 27 Aug 2026</sub>
+<sub>0x06 · 27 Aug 2026 → 28 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">
