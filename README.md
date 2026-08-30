@@ -154,7 +154,7 @@ time a new box gets set up.
 
 A Windows 11 computer-control agent that gets its own desktop and its own cursor — so it works while you keep using yours. Claude computer-use + PySide6.
 
-<sub>0x06 · 27 Aug 2026 → 29 Aug 2026</sub>
+<sub>0x06 · 27 Aug 2026 → 30 Aug 2026</sub>
 
 </td>
 <td width="50%" valign="top">

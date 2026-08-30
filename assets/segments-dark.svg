@@ -1,56 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="Segment map: 11 projects between 2026-06-30 and 2026-08-29">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="Segment map: 11 projects between 2026-06-30 and 2026-08-30">
 <rect width="1200" height="460" fill="#101318"/>
 <rect x="20.5" y="20.5" width="1159.0" height="419.0" fill="none" stroke="#20262e"/>
 <text x="56" y="52" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="#ff7038" letter-spacing="1.4">segment map</text>
-<text x="1144" y="52" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="#8a8172" letter-spacing="0.6" text-anchor="end">30 Jun → 29 Aug · 60 days</text>
-<rect x="279.0" y="90" width="1" height="306" fill="#20262e"/>
-<text x="284.0" y="82" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8a8172" letter-spacing="1">Jul</text>
-<rect x="683.1" y="90" width="1" height="306" fill="#20262e"/>
-<text x="688.1" y="82" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8a8172" letter-spacing="1">Aug</text>
+<text x="1144" y="52" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="#8a8172" letter-spacing="0.6" text-anchor="end">30 Jun → 30 Aug · 61 days</text>
+<rect x="278.8" y="90" width="1" height="306" fill="#20262e"/>
+<text x="283.8" y="82" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8a8172" letter-spacing="1">Jul</text>
+<rect x="676.2" y="90" width="1" height="306" fill="#20262e"/>
+<text x="681.2" y="82" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8a8172" letter-spacing="1">Aug</text>
 <text x="56" y="122" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">shortlink-bypass</text>
-<rect x="266.0" y="112" width="651.7" height="10" fill="#ff8a52"/>
+<rect x="266.0" y="112" width="641.0" height="10" fill="#ff8a52"/>
 <rect x="266.0" y="109" width="2" height="16" fill="#ff8a52"/>
 <text x="1144" y="121" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">50 d</text>
 <text x="56" y="148" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">comic-translator</text>
-<rect x="266.0" y="138" width="651.7" height="10" fill="#ff8a52"/>
+<rect x="266.0" y="138" width="641.0" height="10" fill="#ff8a52"/>
 <rect x="266.0" y="135" width="2" height="16" fill="#ff8a52"/>
 <text x="1144" y="147" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">50 d</text>
 <text x="56" y="174" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">valorant-fandom</text>
-<rect x="396.3" y="164" width="521.3" height="10" fill="#7d735b"/>
-<rect x="396.3" y="161" width="2" height="16" fill="#7d735b"/>
+<rect x="394.2" y="164" width="512.8" height="10" fill="#7d735b"/>
+<rect x="394.2" y="161" width="2" height="16" fill="#7d735b"/>
 <text x="1144" y="173" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">40 d</text>
 <text x="56" y="200" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">agent-setup</text>
-<rect x="513.6" y="190" width="404.0" height="10" fill="#4a4740"/>
-<rect x="513.6" y="187" width="2" height="16" fill="#4a4740"/>
+<rect x="509.6" y="190" width="397.4" height="10" fill="#4a4740"/>
+<rect x="509.6" y="187" width="2" height="16" fill="#4a4740"/>
 <text x="1144" y="199" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">31 d</text>
 <text x="56" y="226" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">cloudflare-temp-sms</text>
-<rect x="526.7" y="216" width="391.0" height="10" fill="#a67a48"/>
-<rect x="526.7" y="213" width="2" height="16" fill="#a67a48"/>
+<rect x="522.4" y="216" width="384.6" height="10" fill="#a67a48"/>
+<rect x="522.4" y="213" width="2" height="16" fill="#a67a48"/>
 <text x="1144" y="225" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">30 d</text>
 <text x="56" y="252" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">aterkeep</text>
-<rect x="787.3" y="242" width="234.6" height="10" fill="#f46c30"/>
-<rect x="787.3" y="239" width="2" height="16" fill="#f46c30"/>
+<rect x="778.8" y="242" width="230.8" height="10" fill="#f46c30"/>
+<rect x="778.8" y="239" width="2" height="16" fill="#f46c30"/>
 <text x="1144" y="251" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">18 d</text>
 <text x="56" y="278" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">auto-ominous</text>
-<rect x="813.4" y="268" width="104.3" height="10" fill="#4a4740"/>
-<rect x="813.4" y="265" width="2" height="16" fill="#4a4740"/>
+<rect x="804.4" y="268" width="102.6" height="10" fill="#4a4740"/>
+<rect x="804.4" y="265" width="2" height="16" fill="#4a4740"/>
 <text x="1144" y="277" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">8 d</text>
 <text x="56" y="304" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">reread</text>
-<rect x="930.7" y="294" width="3.0" height="10" fill="#f46c30"/>
-<rect x="930.7" y="291" width="2" height="16" fill="#f46c30"/>
+<rect x="919.8" y="294" width="3.0" height="10" fill="#f46c30"/>
+<rect x="919.8" y="291" width="2" height="16" fill="#f46c30"/>
 <text x="1144" y="303" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">same day</text>
 <text x="56" y="330" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">curfew</text>
-<rect x="930.7" y="320" width="3.0" height="10" fill="#f46c30"/>
-<rect x="930.7" y="317" width="2" height="16" fill="#f46c30"/>
+<rect x="919.8" y="320" width="3.0" height="10" fill="#f46c30"/>
+<rect x="919.8" y="317" width="2" height="16" fill="#f46c30"/>
 <text x="1144" y="329" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">same day</text>
 <text x="56" y="356" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">kablo</text>
-<rect x="956.8" y="346" width="3.0" height="10" fill="#cf7833"/>
-<rect x="956.8" y="343" width="2" height="16" fill="#cf7833"/>
+<rect x="945.4" y="346" width="3.0" height="10" fill="#cf7833"/>
+<rect x="945.4" y="343" width="2" height="16" fill="#cf7833"/>
 <text x="1144" y="355" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">same day</text>
 <text x="56" y="382" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#a9a294">yanmasa</text>
-<rect x="1021.9" y="372" width="26.1" height="10" fill="#ff8a52"/>
-<rect x="1021.9" y="369" width="2" height="16" fill="#ff8a52"/>
-<text x="1144" y="381" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">2 d</text>
+<rect x="1009.5" y="372" width="38.5" height="10" fill="#ff8a52"/>
+<rect x="1009.5" y="369" width="2" height="16" fill="#ff8a52"/>
+<text x="1144" y="381" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#8a8172" text-anchor="end">3 d</text>
 <rect x="266.0" y="396.0" width="782.0" height="1" fill="#2a303a"/>
 <text x="56" y="434" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8a8172">bar length is how long the repository stayed open, not effort inside it · colour is the primary language, matching the map below</text>
 </svg>
