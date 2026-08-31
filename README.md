@@ -62,7 +62,7 @@ Pure HTTP. No Selenium, no Puppeteer, no browser.
 <td width="50%" valign="top">
 
 #### [shortlink-bypass](https://github.com/KaramelliS/shortlink-bypass)
-<sub>`Python` · `curl` — 1 star — MIT</sub>
+<sub>`Python` · `curl` — 2 stars — MIT</sub>
 
 Resolves link-gateway services — linkvertise, adf.ly, cpmlink,
 boost.ink, aylink — straight to the destination.
@@ -160,7 +160,7 @@ NIMBUS — cloud gaming concept site for KodYazar Codejam 2026
 <td width="50%" valign="top">
 
 #### [yanmasa](https://github.com/KaramelliS/yanmasa)
-<sub>`Python` · `agentic-ai` · `ai-agent` · `ai-assistant` — 1 star — MIT</sub>
+<sub>`Python` · `agentic-ai` · `ai-agent` · `ai-assistant` — 2 stars — MIT</sub>
 
 A Windows 11 computer-control agent that gets its own desktop and its own cursor — so it works while you keep using yours. Claude computer-use + PySide6.
 
