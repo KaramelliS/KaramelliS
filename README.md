@@ -149,14 +149,26 @@ time a new box gets set up.
 <tr>
 <td width="50%" valign="top">
 
+#### [claude-desktop-glm](https://github.com/KaramelliS/claude-desktop-glm)
+<sub>`PowerShell`</sub>
+
+Point the Claude Desktop app at GLM 5.3 or any Anthropic-compatible gateway, from PowerShell
+
+<sub>0x06 · 01 Sep 2026 → 01 Sep 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
 #### [nimbus-cloud-gaming](https://github.com/KaramelliS/nimbus-cloud-gaming)
 <sub>`HTML`</sub>
 
 NIMBUS — cloud gaming concept site for KodYazar Codejam 2026
 
-<sub>0x06 · 30 Aug 2026 → 30 Aug 2026</sub>
+<sub>0x07 · 30 Aug 2026 → 30 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [yanmasa](https://github.com/KaramelliS/yanmasa)
@@ -164,11 +176,9 @@ NIMBUS — cloud gaming concept site for KodYazar Codejam 2026
 
 A Windows 11 computer-control agent that gets its own desktop and its own cursor — so it works while you keep using yours. Claude computer-use + PySide6.
 
-<sub>0x07 · 27 Aug 2026 → 30 Aug 2026</sub>
+<sub>0x08 · 27 Aug 2026 → 30 Aug 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 #### [kablo](https://github.com/KaramelliS/kablo)
@@ -176,9 +186,11 @@ A Windows 11 computer-control agent that gets its own desktop and its own cursor
 
 Run Claude Code on your desktop from your phone. QR pairing, free Cloudflare tunnel, no server.
 
-<sub>0x08 · 22 Aug 2026 → 22 Aug 2026</sub>
+<sub>0x09 · 22 Aug 2026 → 22 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [curfew](https://github.com/KaramelliS/curfew)
@@ -186,11 +198,9 @@ Run Claude Code on your desktop from your phone. QR pairing, free Cloudflare tun
 
 Run Claude Code until a wall-clock deadline, then stop.
 
-<sub>0x09 · 20 Aug 2026 → 20 Aug 2026</sub>
+<sub>0x0A · 20 Aug 2026 → 20 Aug 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 #### [reread](https://github.com/KaramelliS/reread)
@@ -198,9 +208,11 @@ Run Claude Code until a wall-clock deadline, then stop.
 
 Where Claude Code tokens actually go: 96% of them are re-reads.
 
-<sub>0x0A · 20 Aug 2026 → 20 Aug 2026</sub>
+<sub>0x0B · 20 Aug 2026 → 20 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [auto-ominous](https://github.com/KaramelliS/auto-ominous)
@@ -208,9 +220,10 @@ Where Claude Code tokens actually go: 96% of them are re-reads.
 
 One key drinks an Ominous Bottle from anywhere in your inventory and puts your hotbar back. Fabric, Minecraft 1.21.1 to 1.21.11.
 
-<sub>0x0B · 11 Aug 2026 → 19 Aug 2026</sub>
+<sub>0x0C · 11 Aug 2026 → 19 Aug 2026</sub>
 
 </td>
+<td width="50%"></td>
 </tr>
 </table>
 <!--/projects-->
