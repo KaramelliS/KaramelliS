@@ -150,6 +150,7 @@
 <text x="1115.58" y="170.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#ece7db" text-anchor="middle">01</text>
 <rect x="1091.17" y="188.0" width="48.83" height="38" fill="#4a2c17"/>
 <text x="1115.58" y="212.0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#ece7db" text-anchor="middle">03</text>
+<rect x="1091.17" y="230.0" width="48.83" height="38" fill="#1c2129"/>
 <rect x="506.0" y="100" width="1.5" height="298" fill="#ff7038"/>
 <text x="513.0" y="92" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#ff7038" letter-spacing="0.8">account opens · 20 Jun 2026</text>
 <text x="56" y="438" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8a8172">0x00</text>
