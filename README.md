@@ -42,7 +42,7 @@ JavaScript, anything with data in it gets Python.
 <td width="50%" valign="top">
 
 #### [aterkeep](https://github.com/KaramelliS/aterkeep)
-<sub>`Rust` · `axum` · `tokio` — 44 stars</sub>
+<sub>`Rust` · `axum` · `tokio` — 45 stars</sub>
 
 A self-hosted manager that keeps a free Aternos Minecraft
 server online around the clock. One ~2.3 MB binary: keep-alive
