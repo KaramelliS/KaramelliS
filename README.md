@@ -17,7 +17,7 @@ it, and why `shortlink-bypass` resolves a gateway in milliseconds where a browse
 needs seconds.
 
 I'm Berkay, 18, from Tokat. I write Rust, Node.js and Python, and I pick whichever
-one the problem is asking for: a background daemon gets Rust, an edge API gets
+one the problem is asking for: a background daemon gets Rust, an edge API getss
 JavaScript, anything with data in it gets Python.
 
 <!--fig-fields-->
