@@ -62,7 +62,7 @@ Pure HTTP. No Selenium, no Puppeteer, no browser.
 <td width="50%" valign="top">
 
 #### [shortlink-bypass](https://github.com/KaramelliS/shortlink-bypass)
-<sub>`Python` · `curl` — 3 stars — MIT</sub>
+<sub>`Python` · `curl` — 4 stars — MIT</sub>
 
 Resolves link-gateway services — linkvertise, adf.ly, cpmlink,
 boost.ink, aylink — straight to the destination.
