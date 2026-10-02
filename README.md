@@ -287,6 +287,13 @@ is a sales pitch.
 
 ## Now
 
+- Building **rovecode** — a coding agent for the terminal (AGPL-3.0, Bun +
+  TypeScript) and the model platform behind it — under
+  [RoveCode Lab](https://github.com/RoveCode-Lab): one OpenAI-compatible API,
+  every model. The org is the project's home; the project itself — code, name,
+  domains, infrastructure — is mine, and it leaves with me if I ever do. That is
+  not a mood, it is written down:
+  [GOVERNANCE.md](https://github.com/RoveCode-Lab/rovecode/blob/main/GOVERNANCE.md).
 - Turning **aterkeep** into something a stranger can install: 14 languages,
   installers for three platforms, a design system, a promo video per language.
 - Reading a lot of **Go**. Nothing public in it yet, so it is not in the list
