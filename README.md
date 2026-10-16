@@ -150,7 +150,7 @@ time a new box gets set up.
 <td width="50%" valign="top">
 
 #### [claude-custom-models](https://github.com/KaramelliS/claude-custom-models)
-<sub>`JavaScript` · `claude` · `claude-desktop` · `deepseek` — MIT</sub>
+<sub>`JavaScript` · `claude` · `claude-desktop` · `deepseek` — 1 star — MIT</sub>
 
 Run any LLM (DeepSeek, Qwen, GPT, local models) inside Claude Desktop — local patcher + Anthropic↔OpenAI translation proxy
 
