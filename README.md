@@ -56,7 +56,7 @@ This one answers it.
 
 Pure HTTP. No Selenium, no Puppeteer, no browser.
 
-<sub>0x00 · 09 Aug 2026 → 27 Aug 2026</sub>
+<sub>0x00 · 09 Aug 2026 → 29 Oct 2026</sub>
 
 </td>
 <td width="50%" valign="top">
