@@ -154,7 +154,7 @@ time a new box gets set up.
 
 build artifacts
 
-<sub>0x06 · 10 Nov 2026 → 11 Nov 2026</sub>
+<sub>0x06 · 10 Nov 2026 → 13 Nov 2026</sub>
 
 </td>
 <td width="50%" valign="top">
