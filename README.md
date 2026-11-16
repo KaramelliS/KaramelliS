@@ -149,14 +149,26 @@ time a new box gets set up.
 <tr>
 <td width="50%" valign="top">
 
+#### [qwen2api](https://github.com/KaramelliS/qwen2api)
+<sub>`JavaScript`</sub>
+
+_No description yet._
+
+<sub>0x06 · 16 Nov 2026 → 16 Nov 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
 #### [uwu-assets](https://github.com/KaramelliS/uwu-assets)
 <sub></sub>
 
 build artifacts
 
-<sub>0x06 · 10 Nov 2026 → 15 Nov 2026</sub>
+<sub>0x07 · 10 Nov 2026 → 15 Nov 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [claude-custom-models](https://github.com/KaramelliS/claude-custom-models)
@@ -164,11 +176,9 @@ build artifacts
 
 Run any LLM (DeepSeek, Qwen, GPT, local models) inside Claude Desktop — local patcher + Anthropic↔OpenAI translation proxy
 
-<sub>0x07 · 04 Oct 2026 → 04 Oct 2026</sub>
+<sub>0x08 · 04 Oct 2026 → 04 Oct 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 #### [kaesra](https://github.com/KaramelliS/kaesra)
@@ -176,9 +186,11 @@ Run any LLM (DeepSeek, Qwen, GPT, local models) inside Claude Desktop — local 
 
 Kaesra — Counter-Strike 1.6 icin rank ve istatistik sistemi. ReAPI + PHP, MOTD sunumu, tema sistemi. CC BY-NC-SA 4.0.
 
-<sub>0x08 · 03 Oct 2026 → 03 Oct 2026</sub>
+<sub>0x09 · 03 Oct 2026 → 03 Oct 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [netportal](https://github.com/KaramelliS/netportal)
@@ -186,11 +198,9 @@ Kaesra — Counter-Strike 1.6 icin rank ve istatistik sistemi. ReAPI + PHP, MOTD
 
 Sıradan bir kayıt formu. Telefon numaranızı girmeyi deneyin.
 
-<sub>0x09 · 07 Sep 2026 → 07 Sep 2026</sub>
+<sub>0x0A · 07 Sep 2026 → 07 Sep 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 #### [astor-web](https://github.com/KaramelliS/astor-web)
@@ -198,9 +208,11 @@ Sıradan bir kayıt formu. Telefon numaranızı girmeyi deneyin.
 
 Astor Enerji kurumsal web sitesi — Next 16 statik export, GitHub Pages
 
-<sub>0x0A · 03 Sep 2026 → 03 Sep 2026</sub>
+<sub>0x0B · 03 Sep 2026 → 03 Sep 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [claude-desktop-glm](https://github.com/KaramelliS/claude-desktop-glm)
@@ -208,11 +220,9 @@ Astor Enerji kurumsal web sitesi — Next 16 statik export, GitHub Pages
 
 Point the Claude Desktop app at GLM 5.3 or any Anthropic-compatible gateway, from PowerShell
 
-<sub>0x0B · 01 Sep 2026 → 01 Sep 2026</sub>
+<sub>0x0C · 01 Sep 2026 → 01 Sep 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 #### [nimbus-cloud-gaming](https://github.com/KaramelliS/nimbus-cloud-gaming)
@@ -220,9 +230,11 @@ Point the Claude Desktop app at GLM 5.3 or any Anthropic-compatible gateway, fro
 
 NIMBUS — cloud gaming concept site for KodYazar Codejam 2026
 
-<sub>0x0C · 30 Aug 2026 → 30 Aug 2026</sub>
+<sub>0x0D · 30 Aug 2026 → 30 Aug 2026</sub>
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 #### [kablo](https://github.com/KaramelliS/kablo)
@@ -230,27 +242,15 @@ NIMBUS — cloud gaming concept site for KodYazar Codejam 2026
 
 Run Claude Code on your desktop from your phone. QR pairing, free Cloudflare tunnel, no server.
 
-<sub>0x0D · 22 Aug 2026 → 22 Aug 2026</sub>
+<sub>0x0E · 22 Aug 2026 → 22 Aug 2026</sub>
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 #### [curfew](https://github.com/KaramelliS/curfew)
 <sub>`Rust` · `automation` · `claude` · `claude-code` — MIT</sub>
 
 Run Claude Code until a wall-clock deadline, then stop.
-
-<sub>0x0E · 20 Aug 2026 → 20 Aug 2026</sub>
-
-</td>
-<td width="50%" valign="top">
-
-#### [reread](https://github.com/KaramelliS/reread)
-<sub>`Rust` · `claude` · `claude-code` · `cli` — MIT</sub>
-
-Where Claude Code tokens actually go: 96% of them are re-reads.
 
 <sub>0x0F · 20 Aug 2026 → 20 Aug 2026</sub>
 
@@ -259,15 +259,24 @@ Where Claude Code tokens actually go: 96% of them are re-reads.
 <tr>
 <td width="50%" valign="top">
 
+#### [reread](https://github.com/KaramelliS/reread)
+<sub>`Rust` · `claude` · `claude-code` · `cli` — MIT</sub>
+
+Where Claude Code tokens actually go: 96% of them are re-reads.
+
+<sub>0x10 · 20 Aug 2026 → 20 Aug 2026</sub>
+
+</td>
+<td width="50%" valign="top">
+
 #### [auto-ominous](https://github.com/KaramelliS/auto-ominous)
 <sub>`Java` · `fabric` · `fabricmc` · `minecraft` — 1 star — MIT</sub>
 
 One key drinks an Ominous Bottle from anywhere in your inventory and puts your hotbar back. Fabric, Minecraft 1.21.1 to 1.21.11.
 
-<sub>0x10 · 11 Aug 2026 → 19 Aug 2026</sub>
+<sub>0x11 · 11 Aug 2026 → 19 Aug 2026</sub>
 
 </td>
-<td width="50%"></td>
 </tr>
 </table>
 <!--/projects-->
